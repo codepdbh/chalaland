@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { cn, getAssetPath } from "@/lib/utils";
 import { Check, X as XIcon, Lightbulb, Backpack, ShieldCheck } from "lucide-react";
 import type { Package } from "@/data/packages";
 import SectionTitle from "./SectionTitle";
@@ -20,7 +21,7 @@ export default function PackageDetail({ pkg }: PackageDetailProps) {
       <section className="relative h-[30vh] sm:h-[40vh] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${pkg.image})` }}
+          style={{ backgroundImage: `url(${getAssetPath(pkg.image)})` }}
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">

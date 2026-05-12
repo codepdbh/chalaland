@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn, getAssetPath } from "@/lib/utils";
 
 interface PackageCardProps {
   slug: string;
@@ -29,7 +29,7 @@ export default function PackageCard({
       <div className="relative h-52 sm:h-56 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-          style={{ backgroundImage: `url(${image})` }}
+          style={{ backgroundImage: `url(${getAssetPath(image)})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
       </div>

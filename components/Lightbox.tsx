@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 
 interface LightboxProps {
@@ -100,7 +101,7 @@ export default function Lightbox({
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={current.src}
+            src={getAssetPath(images[currentIndex].src)}
             alt={current.alt}
             className="max-w-full max-h-[75vh] object-contain rounded-lg"
           />

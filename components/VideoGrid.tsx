@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { videos, videoCategories, type VideoCategory } from "@/data/videos";
-import { cn } from "@/lib/utils";
+import { cn, getAssetPath } from "@/lib/utils";
 
 export default function VideoGrid() {
   const [activeCategory, setActiveCategory] = useState<VideoCategory | "all">("all");

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { formatDate } from "@/lib/utils";
+import { cn, formatDate, getAssetPath } from "@/lib/utils";
 import type { BlogPost } from "@/data/blog";
 
 interface BlogCardProps {
@@ -13,7 +13,7 @@ export default function BlogCard({ post }: BlogCardProps) {
       <div className="relative h-48 sm:h-52 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-          style={{ backgroundImage: `url(${post.image})` }}
+          style={{ backgroundImage: `url(${getAssetPath(post.image)})` }}
         />
         <div className="absolute top-3 left-3">
           <span className="px-3 py-1 bg-orange text-white text-xs font-semibold rounded-full">

@@ -31,3 +31,11 @@ export function truncateText(text: string, maxLength: number): string {
   if (text.length <= maxLength) return text;
   return text.slice(0, maxLength).trimEnd() + "...";
 }
+
+/** Prefix asset paths with basePath for GitHub Pages */
+export function getAssetPath(path: string): string {
+  if (!path) return "";
+  if (path.startsWith("http") || path.startsWith("data:")) return path;
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  return `/chalaland${cleanPath}`;
+}

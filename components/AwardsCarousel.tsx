@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { awards } from "@/data/awards";
 import SectionTitle from "./SectionTitle";
+import { getAssetPath } from "@/lib/utils";
 
 export default function AwardsCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -52,12 +53,11 @@ export default function AwardsCarousel() {
                   className="flex-[0_0_50%] sm:flex-[0_0_33.333%] md:flex-[0_0_25%] lg:flex-[0_0_20%] px-3"
                 >
                   <div className="flex flex-col items-center justify-center h-32 bg-smoke rounded-lg p-4 hover:shadow-md transition-shadow">
-                    {/* Placeholder award icon */}
-                    <div className="w-16 h-16 rounded-full bg-orange/10 border-2 border-orange/30 flex items-center justify-center mb-2">
-                      <span className="text-orange text-xs font-bold text-center leading-tight">
-                        {award.title.split(" ").slice(0, 2).join("\n")}
-                      </span>
-                    </div>
+                    <img 
+                      src={getAssetPath(award.image)}
+                      alt={award.title}
+                      className="w-16 h-16 mb-2 object-contain"
+                    />
                     <p className="text-[10px] text-gray-text text-center leading-tight mt-1">
                       {award.title}
                     </p>

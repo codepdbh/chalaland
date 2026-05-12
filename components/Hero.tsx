@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn, getAssetPath } from "@/lib/utils";
 
 interface HeroProps {
   /** Optional title overlay */
@@ -55,14 +55,14 @@ export default function Hero({
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          poster={backgroundImage}
+          poster={getAssetPath(backgroundImage)}
         >
-          <source src={backgroundVideo} type="video/mp4" />
+          <source src={getAssetPath(backgroundVideo)} type="video/mp4" />
         </video>
       ) : (
         <div
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
+          style={{ backgroundImage: `url(${getAssetPath(backgroundImage)})` }}
         />
       )}
 

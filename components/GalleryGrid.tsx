@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { cn } from "@/lib/utils";
+import { cn, getAssetPath } from "@/lib/utils";
 import { galleryImages, galleryCategories, type GalleryCategory } from "@/data/gallery";
 import Lightbox from "./Lightbox";
 
@@ -62,7 +62,7 @@ export default function GalleryGrid() {
           >
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-              style={{ backgroundImage: `url(${image.src})` }}
+              style={{ backgroundImage: `url(${getAssetPath(image.src)})` }}
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
             <div className="absolute inset-0 flex items-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
