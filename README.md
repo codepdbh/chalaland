@@ -1,36 +1,170 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EcoLodge Amazonia — Sitio Web Turístico
 
-## Getting Started
+Sitio web turístico/ecológico tipo lodge para un albergue ecológico comunitario en la Amazonía. Construido con Next.js, TypeScript y Tailwind CSS.
 
-First, run the development server:
+## 🚀 Inicio Rápido
 
 ```bash
+# Instalar dependencias
+npm install
+
+# Servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Compilar para producción
+npm run build
+
+# Iniciar en producción
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Estructura del Proyecto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+/app                    → Páginas (App Router)
+  /page.tsx             → Home
+  /layout.tsx           → Layout global (fuentes, metadata)
+  /globals.css          → Estilos globales y variables
+  /sobre-nosotros/      → Páginas institucionales
+  /paquetes/            → Listado y detalle de paquetes
+  /galeria/             → Fotos y videos
+  /blog/                → Blog con posts
+  /contacto/            → Formulario de contacto
+  /reservas/            → Formulario de reservas
+  /api/                 → API routes (contacto, reservas)
 
-## Learn More
+/components             → Componentes reutilizables
+/data                   → Datos centralizados (editables)
+/lib                    → Utilidades y validaciones
+/public/assets          → Imágenes, logos, videos
+```
 
-To learn more about Next.js, take a look at the following resources:
+## ✏️ Cómo Personalizar
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Cambiar Logo
+Reemplazar el componente del logo circular en `components/Navbar.tsx`. Buscar el `<div>` con texto "ECO" y sustituir por tu `<Image>` con el logo real.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Cambiar Colores
+Editar las variables en `app/globals.css` dentro de `@theme inline`:
+```css
+--color-orange: #ff6b00;    /* Color principal */
+--color-teal: #00b39b;      /* Color secundario */
+--color-dark: #202829;      /* Fondo oscuro */
+```
 
-## Deploy on Vercel
+### Cambiar Textos y Datos de Contacto
+Editar `data/site.ts`:
+- `siteName` — Nombre del sitio
+- `phone`, `email`, `whatsapp` — Contacto
+- `facebook`, `instagram` — Redes sociales
+- `promoText` — Texto de la barra naranja
+- `copyright` — Texto del footer
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Cambiar Paquetes Turísticos
+Editar `data/packages.ts`. Cada paquete tiene:
+- `slug` — URL amigable
+- `title`, `duration`, `nights` — Info básica
+- `image` — Ruta a la imagen
+- `itinerary` — Días con actividades
+- `regularPrice`, `sharedPrice` — Tablas de precios
+- `includes`, `excludes` — Qué incluye/no incluye
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Agregar un Nuevo Paquete
+1. Abrir `data/packages.ts`
+2. Copiar un paquete existente en el array `packages`
+3. Cambiar el `slug` (ej: `"tucan"`)
+4. Editar todos los campos
+5. Agregar imagen en `public/assets/packages/tucan.jpg`
+6. Agregar al menú en `data/navigation.ts`
+7. Agregar a `packageOptions` para el formulario de reservas
+
+### Cambiar Imágenes
+Reemplazar los archivos en:
+- `public/assets/hero/` — Hero principal
+- `public/assets/packages/` — Imágenes de paquetes
+- `public/assets/gallery/` — Galería de fotos
+- `public/assets/awards/` — Logos de premios
+
+### Agregar Imagen a la Galería
+1. Colocar la imagen en `public/assets/gallery/`
+2. Abrir `data/gallery.ts`
+3. Agregar un nuevo objeto al array:
+```ts
+{
+  id: 31,
+  src: "/assets/gallery/mi-nueva-foto.jpg",
+  alt: "Descripción de la imagen",
+  category: "paisajes", // paisajes | fauna | flora | albergue | comunidad
+}
+```
+
+### Cambiar Mapa
+Editar `data/contact.ts` → `mapEmbedUrl` con la URL de embed de Google Maps de tu ubicación.
+
+### Cambiar Redes Sociales
+Editar `data/site.ts` → `facebook`, `instagram`.
+
+### Agregar Post al Blog
+1. Abrir `data/blog.ts`
+2. Agregar un nuevo objeto al array `blogPosts` con: `slug`, `title`, `excerpt`, `content`, `image`, `category`, `author`, `date`, `readTime`.
+
+## 📧 Activar Envío Real de Formularios
+
+Los formularios están preparados para conectar con servicios de email. Editar:
+
+- `app/api/contact/route.ts`
+- `app/api/reservas/route.ts`
+
+Opciones recomendadas:
+1. **Resend** — `npm install resend`
+2. **Nodemailer** — `npm install nodemailer`
+3. **SendGrid** — `npm install @sendgrid/mail`
+
+Cada archivo tiene comentarios indicando dónde integrar el servicio.
+
+## 🛠 Tecnologías
+
+| Tecnología | Uso |
+|---|---|
+| Next.js 16 (App Router) | Framework |
+| TypeScript | Tipado |
+| Tailwind CSS v4 | Estilos |
+| lucide-react | Íconos |
+| framer-motion | Animaciones |
+| embla-carousel-react | Carruseles |
+| react-hook-form + zod | Formularios |
+| clsx + tailwind-merge | Utilidades CSS |
+
+## 📱 Responsive
+
+El sitio está optimizado para:
+- Móvil: 320px+
+- Tablet: 768px+
+- Desktop: 1024px+
+- Large: 1440px+
+
+## 🔒 SEO
+
+Cada página incluye:
+- Title y description únicos
+- Open Graph tags
+- Estructura semántica HTML5
+- Alt text en imágenes
+- Heading hierarchy correcta
+
+## ⚡ Producción
+
+Recomendaciones antes de desplegar:
+1. Reemplazar todas las imágenes placeholder con las reales
+2. Configurar el envío real de formularios
+3. Actualizar los textos legales (privacidad, términos)
+4. Configurar Google Analytics u otra herramienta de métricas
+5. Optimizar imágenes con `next/image` (ya preparado)
+6. Configurar dominio y SSL
+7. Considerar CDN para assets estáticos
+
+## 📄 Licencia
+
+Proyecto privado. Todos los derechos reservados.

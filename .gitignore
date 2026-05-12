@@ -1,6 +1,6 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# ============================================
+# DEPENDENCIES
+# ============================================
 /node_modules
 /.pnp
 .pnp.*
@@ -10,32 +10,83 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# ============================================
+# NEXT.JS BUILD OUTPUT
+# ============================================
 /.next/
 /out/
-
-# production
 /build
+/.turbo
 
-# misc
+# ============================================
+# TESTING
+# ============================================
+/coverage
+
+# ============================================
+# ENVIRONMENT VARIABLES
+# ============================================
+.env
+.env.*
+!.env.example
+
+# ============================================
+# OS FILES
+# ============================================
 .DS_Store
-*.pem
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
 
-# debug
+# ============================================
+# EDITOR / IDE
+# ============================================
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# ============================================
+# DEBUG LOGS
+# ============================================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# ============================================
+# KEYS / CERTIFICATES
+# ============================================
+*.pem
+*.key
+*.cert
 
-# vercel
+# ============================================
+# DEPLOYMENT
+# ============================================
 .vercel
+.netlify
 
-# typescript
+# ============================================
+# TYPESCRIPT
+# ============================================
 *.tsbuildinfo
 next-env.d.ts
+
+# ============================================
+# MISC
+# ============================================
+*.log
+*.tmp
+*.temp
+.cache
+
+# ============================================
+# VIDEO ORIGINAL (ya copiado a public/assets)
+# ============================================
+/videoplayback.mp4

@@ -1,0 +1,82 @@
+"use client";
+
+import { useCallback, useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { awards } from "@/data/awards";
+import SectionTitle from "./SectionTitle";
+
+export default function AwardsCarousel() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: "start",
+    slidesToScroll: 1,
+  });
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  // Auto-play
+  useEffect(() => {
+    if (!emblaApi) return;
+    const interval = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [emblaApi]);
+
+  return (
+    <section className="bg-white py-14 md:py-18 px-4">
+      <div className="mx-auto max-w-6xl">
+        <SectionTitle
+          title="Reconocimientos"
+          subtitle="Premios y certificaciones que respaldan nuestro compromiso"
+        />
+
+        <div className="relative">
+          {/* Prev Button */}
+          <button
+            onClick={scrollPrev}
+            className="absolute -left-2 md:-left-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-dark/80 text-white flex items-center justify-center hover:bg-dark transition-colors"
+            aria-label="Premio anterior"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Carousel */}
+          <div className="overflow-hidden mx-8 md:mx-12" ref={emblaRef}>
+            <div className="flex">
+              {awards.map((award) => (
+                <div
+                  key={award.id}
+                  className="flex-[0_0_50%] sm:flex-[0_0_33.333%] md:flex-[0_0_25%] lg:flex-[0_0_20%] px-3"
+                >
+                  <div className="flex flex-col items-center justify-center h-32 bg-smoke rounded-lg p-4 hover:shadow-md transition-shadow">
+                    {/* Placeholder award icon */}
+                    <div className="w-16 h-16 rounded-full bg-orange/10 border-2 border-orange/30 flex items-center justify-center mb-2">
+                      <span className="text-orange text-xs font-bold text-center leading-tight">
+                        {award.title.split(" ").slice(0, 2).join("\n")}
+                      </span>
+                    </div>
+                    <p className="text-[10px] text-gray-text text-center leading-tight mt-1">
+                      {award.title}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Next Button */}
+          <button
+            onClick={scrollNext}
+            className="absolute -right-2 md:-right-5 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-dark/80 text-white flex items-center justify-center hover:bg-dark transition-colors"
+            aria-label="Premio siguiente"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
