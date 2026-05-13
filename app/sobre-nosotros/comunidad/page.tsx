@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import CTAButton from "@/components/CTAButton";
+import PageHero from "@/components/PageHero";
+import { getAssetPath } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Nuestra Comunidad",
@@ -9,20 +11,16 @@ export const metadata: Metadata = {
 
 export default function ComunidadPage() {
   return (
-    <div className="pt-[130px] lg:pt-[140px]">
-      {/* Hero */}
-      <section className="relative h-[30vh] sm:h-[35vh] bg-dark flex items-center justify-center">
-        <div className="text-center px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white uppercase">
-            Nuestra Comunidad
-          </h1>
-          <p className="mt-3 text-white/70 text-lg">Guardianes de la selva amazónica</p>
-          <div className="mt-4 h-1 w-16 bg-orange mx-auto rounded-full" />
-        </div>
-      </section>
+    <>
+      <PageHero
+        title="Nuestra Comunidad"
+        eyebrow="Guardianes de la selva"
+        subtitle="La experiencia turística existe porque la comunidad decidió proteger, gestionar y compartir su territorio."
+        image="/assets/gallery/community-3.jpg"
+      />
 
       {/* Content */}
-      <section className="bg-smoke py-14 md:py-18 px-4">
+      <section className="canopy-section py-14 md:py-20 px-4">
         <div className="mx-auto max-w-4xl">
           {/* Intro */}
           <div className="mb-12">
@@ -38,9 +36,11 @@ export default function ComunidadPage() {
             </p>
           </div>
 
-          {/* Featured Image Placeholder */}
-          <div className="mb-12 h-64 sm:h-80 bg-gradient-to-br from-teal/20 to-dark-light/30 rounded-lg flex items-center justify-center border border-gray-200">
-            <span className="text-gray-text text-sm font-heading">[Imagen destacada de la comunidad]</span>
+          <div className="image-frame mb-12 h-64 sm:h-80">
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${getAssetPath("/assets/gallery/community-1.jpg")})` }}
+            />
           </div>
 
           {/* Sections */}
@@ -98,10 +98,11 @@ export default function ComunidadPage() {
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <div
                 key={i}
-                className="aspect-square bg-gradient-to-br from-smoke to-gray-200 rounded-lg flex items-center justify-center border border-gray-200"
-              >
-                <span className="text-gray-text/50 text-xs">Foto {i}</span>
-              </div>
+                className="aspect-square overflow-hidden rounded-2xl border border-white bg-cover bg-center shadow-sm"
+                style={{
+                  backgroundImage: `url(${getAssetPath(`/assets/gallery/community-${i}.jpg`)})`,
+                }}
+              />
             ))}
           </div>
 
@@ -116,6 +117,6 @@ export default function ComunidadPage() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

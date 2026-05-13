@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { X, ChevronDown, ChevronUp } from "lucide-react";
 import { mainNavigation } from "@/data/navigation";
+import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {
@@ -39,10 +40,22 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         )}
         role="dialog"
         aria-modal="true"
+        aria-hidden={!isOpen}
         aria-label="Menú de navegación"
       >
         {/* Close Button */}
-        <div className="flex justify-end p-4">
+        <div className="flex items-center justify-between border-b border-white/10 p-4">
+          <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-orange font-heading font-bold text-white">
+              CH
+            </div>
+            <div>
+              <p className="font-heading text-sm font-bold uppercase text-white">
+                {siteConfig.siteName}
+              </p>
+              <p className="text-xs text-white/55">Menú principal</p>
+            </div>
+          </div>
           <button
             onClick={onClose}
             className="text-white/70 hover:text-white transition-colors p-1"

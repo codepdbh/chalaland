@@ -9,7 +9,7 @@ export default function PromoBar({ text, className }: PromoBarProps) {
   return (
     <div
       className={cn(
-        "w-full bg-orange py-4 px-4",
+        "w-full bg-orange py-4 px-4 shadow-lg shadow-orange/15",
         className
       )}
     >

@@ -25,13 +25,13 @@ export default function CTAButton({
   ariaLabel,
 }: CTAButtonProps) {
   const baseClasses =
-    "inline-flex items-center justify-center font-heading font-semibold tracking-wide rounded-full transition-all duration-300 focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2";
+    "inline-flex items-center justify-center font-heading font-semibold tracking-wide rounded-full transition-all duration-300 focus-visible:ring-2 focus-visible:ring-orange focus-visible:ring-offset-2 hover:-translate-y-0.5";
 
   const variants = {
-    primary: "bg-teal text-white hover:bg-teal-hover shadow-md hover:shadow-lg",
-    secondary: "bg-orange text-white hover:bg-orange-hover shadow-md hover:shadow-lg",
-    outline: "border-2 border-orange text-orange hover:bg-orange hover:text-white",
-    "outline-white": "border-2 border-white text-white hover:bg-white hover:text-dark",
+    primary: "bg-teal text-white hover:bg-teal-hover shadow-lg shadow-teal/15 hover:shadow-xl",
+    secondary: "bg-orange text-white hover:bg-orange-hover shadow-lg shadow-orange/20 hover:shadow-xl",
+    outline: "border-2 border-orange text-orange hover:bg-orange hover:text-white bg-white/70",
+    "outline-white": "border-2 border-white text-white hover:bg-white hover:text-dark bg-white/10 backdrop-blur-sm",
   };
 
   const sizes = {

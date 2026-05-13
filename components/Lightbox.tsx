@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { getAssetPath } from "@/lib/utils";
-import { cn } from "@/lib/utils";
 
 interface LightboxProps {
   images: { src: string; alt: string }[];

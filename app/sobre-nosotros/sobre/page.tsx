@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SectionTitle from "@/components/SectionTitle";
 import CTAButton from "@/components/CTAButton";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros",
@@ -10,20 +11,16 @@ export const metadata: Metadata = {
 
 export default function SobrePage() {
   return (
-    <div className="pt-[130px] lg:pt-[140px]">
-      {/* Hero Banner */}
-      <section className="relative h-[30vh] sm:h-[35vh] bg-dark flex items-center justify-center">
-        <div className="text-center px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white uppercase">
-            Sobre Nosotros
-          </h1>
-          <p className="mt-3 text-white/70 text-lg">Albergue Ecológico Comunitario</p>
-          <div className="mt-4 h-1 w-16 bg-orange mx-auto rounded-full" />
-        </div>
-      </section>
+    <>
+      <PageHero
+        title="Sobre Nosotros"
+        eyebrow="Proyecto comunitario"
+        subtitle="Un albergue nacido para proteger territorio, compartir conocimiento local y hacer del turismo una herramienta de conservación."
+        image="/assets/gallery/community-1.jpg"
+      />
 
       {/* Content */}
-      <section className="bg-smoke py-14 md:py-18 px-4">
+      <section className="canopy-section py-14 md:py-20 px-4">
         <div className="mx-auto max-w-4xl">
           {/* Intro */}
           <div className="prose max-w-none mb-14">
@@ -41,7 +38,7 @@ export default function SobrePage() {
 
           {/* Mission & Vision */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
               <h3 className="font-heading font-bold text-orange text-lg mb-3">Nuestra Misión</h3>
               <p className="text-sm text-gray-text leading-relaxed">
                 Promover el ecoturismo comunitario como herramienta de conservación y desarrollo sostenible,
@@ -49,7 +46,7 @@ export default function SobrePage() {
                 cultura amazónica, mientras generamos beneficios directos para nuestra comunidad.
               </p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
               <h3 className="font-heading font-bold text-teal text-lg mb-3">Nuestra Visión</h3>
               <p className="text-sm text-gray-text leading-relaxed">
                 Ser el referente mundial de turismo comunitario sostenible en la Amazonía, demostrando que la
@@ -89,7 +86,7 @@ export default function SobrePage() {
                 desc: "Visita a la comunidad, talleres de artesanías y presentaciones de danzas tradicionales.",
               },
             ].map((activity, i) => (
-              <div key={i} className="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+              <div key={i} className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
                 <h4 className="font-heading font-semibold text-dark text-base mb-2">{activity.title}</h4>
                 <p className="text-sm text-gray-text">{activity.desc}</p>
               </div>
@@ -107,6 +104,6 @@ export default function SobrePage() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

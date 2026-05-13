@@ -49,7 +49,7 @@ export default function ContactForm() {
   };
 
   const inputClasses =
-    "w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm text-dark placeholder:text-gray-text/50 focus:border-orange focus:ring-1 focus:ring-orange outline-none transition-colors";
+    "w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-dark placeholder:text-gray-text/50 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-colors shadow-sm";
   const labelClasses = "block text-sm font-semibold text-dark mb-1.5";
   const errorClasses = "text-red-500 text-xs mt-1";
 
@@ -144,8 +144,8 @@ export default function ContactForm() {
         type="submit"
         disabled={status === "loading"}
         className={cn(
-          "w-full py-3.5 bg-orange text-white font-heading font-semibold rounded-full",
-          "hover:bg-orange-hover transition-all duration-300",
+          "w-full py-3.5 bg-orange text-white font-heading font-semibold rounded-full shadow-lg shadow-orange/20",
+          "hover:bg-orange-hover hover:-translate-y-0.5 transition-all duration-300",
           "disabled:opacity-50 disabled:cursor-not-allowed",
           "flex items-center justify-center gap-2"
         )}
@@ -162,14 +162,14 @@ export default function ContactForm() {
 
       {/* Status Messages */}
       {status === "success" && (
-        <div className="flex items-center gap-2 text-green-600 text-sm bg-green-50 p-3 rounded-lg">
+        <div className="flex items-center gap-2 text-green-600 text-sm bg-green-50 p-3 rounded-xl">
           <CheckCircle className="w-5 h-5" />
           <span>¡Mensaje enviado exitosamente! Nos pondremos en contacto pronto.</span>
         </div>
       )}
 
       {status === "error" && (
-        <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 p-3 rounded-lg">
+        <div className="flex items-center gap-2 text-red-600 text-sm bg-red-50 p-3 rounded-xl">
           <AlertCircle className="w-5 h-5" />
           <span>Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.</span>
         </div>

@@ -21,6 +21,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+
+  /** Keep Turbopack scoped to this project even if parent folders have lockfiles */
+  turbopack: {
+    root: process.cwd(),
+  },
 };
 
 export default nextConfig;

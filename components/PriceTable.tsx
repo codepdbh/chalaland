@@ -8,8 +8,8 @@ interface PriceTableProps {
 
 export default function PriceTable({ title, prices, note }: PriceTableProps) {
   return (
-    <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm">
-      <div className="bg-dark px-5 py-3">
+    <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+      <div className="dark-card px-5 py-4">
         <h4 className="text-white font-heading font-semibold text-sm uppercase tracking-wide">
           {title}
         </h4>

@@ -5,8 +5,45 @@ import { siteConfig } from "@/data/site";
 export default function Footer() {
   return (
     <footer className="bg-dark text-white/80" role="contentinfo">
+      <div className="border-b border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-10 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="eyebrow border-white/15 bg-white/10 text-white">
+              Viaja con sentido
+            </p>
+            <h2 className="mt-4 max-w-2xl font-heading text-2xl font-bold text-white md:text-3xl">
+              Reserva una experiencia amazónica con comunidad, bosque y tiempo para mirar de verdad.
+            </h2>
+          </div>
+          <Link
+            href="/reservas"
+            className="inline-flex w-fit items-center justify-center rounded-full bg-orange px-7 py-3 font-heading text-sm font-bold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-orange-hover"
+          >
+            Solicitar reserva
+          </Link>
+        </div>
+      </div>
+
       <div className="mx-auto max-w-7xl px-4 py-12 md:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-3">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-orange font-heading text-lg font-bold text-white">
+                CH
+              </div>
+              <div>
+                <p className="font-heading text-sm font-bold uppercase text-white">
+                  {siteConfig.siteName}
+                </p>
+                <p className="text-xs text-white/50">{siteConfig.tagline}</p>
+              </div>
+            </div>
+            <p className="mt-5 text-sm leading-relaxed text-white/60">
+              Ecolodge comunitario para descubrir la Amazonía boliviana con guías locales, senderos, lago y cultura viva.
+            </p>
+          </div>
+
           {/* Column 1: Contact Info */}
           <div>
             <h3 className="text-white text-sm font-heading font-bold uppercase tracking-widest mb-5">

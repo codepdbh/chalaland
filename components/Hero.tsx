@@ -1,13 +1,27 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
+import Link from "next/link";
+import { CalendarCheck, ChevronDown, Compass, ArrowRight } from "lucide-react";
 import { cn, getAssetPath } from "@/lib/utils";
 
+interface HeroStat {
+  value: string;
+  label: string;
+}
+
 interface HeroProps {
+  /** Small label above title */
+  kicker?: string;
   /** Optional title overlay */
   title?: string;
   /** Optional subtitle */
   subtitle?: string;
+  /** Primary CTA */
+  primaryCta?: { href: string; label: string };
+  /** Secondary CTA */
+  secondaryCta?: { href: string; label: string };
+  /** Compact stats shown over the hero */
+  stats?: HeroStat[];
   /** Background image path */
   backgroundImage?: string;
   /** Background video path (takes precedence over image) */
@@ -19,8 +33,12 @@ interface HeroProps {
 }
 
 export default function Hero({
+  kicker,
   title,
   subtitle,
+  primaryCta,
+  secondaryCta,
+  stats = [],
   backgroundImage = "/assets/hero/hero-placeholder.jpg",
   backgroundVideo,
   showArrow = true,
@@ -45,7 +63,7 @@ export default function Hero({
   return (
     <section
       id="hero-section"
-      className={cn("relative w-full overflow-hidden", heightClasses[variant])}
+      className={cn("relative w-full overflow-hidden bg-dark", heightClasses[variant])}
     >
       {/* Background Video or Image */}
       {backgroundVideo ? (
@@ -66,22 +84,76 @@ export default function Hero({
         />
       )}
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      {/* Layered Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-dark/90 via-dark/55 to-dark/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-dark/78 via-transparent to-dark/20" />
+      <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-dark to-transparent" />
 
       {/* Content */}
-      {(title || subtitle) && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
-          {title && (
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white drop-shadow-lg max-w-4xl">
-              {title}
-            </h1>
-          )}
-          {subtitle && (
-            <p className="mt-4 text-lg sm:text-xl md:text-2xl text-white/90 font-body max-w-2xl drop-shadow">
-              {subtitle}
-            </p>
-          )}
+      {(kicker || title || subtitle || primaryCta || secondaryCta || stats.length > 0) && (
+        <div className="absolute inset-0 z-10 flex items-center">
+          <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-end gap-8 px-4 pt-28 md:grid-cols-[minmax(0,1fr)_360px] lg:pt-36">
+            <div className="max-w-3xl">
+              {kicker && (
+                <span className="eyebrow border-white/25 bg-white/10 text-white">
+                  <Compass className="h-3.5 w-3.5" />
+                  {kicker}
+                </span>
+              )}
+              {title && (
+                <h1 className="mt-5 text-4xl font-bold text-white drop-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl">
+                  {title}
+                </h1>
+              )}
+              {subtitle && (
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/85 drop-shadow sm:text-lg md:text-xl">
+                  {subtitle}
+                </p>
+              )}
+              {(primaryCta || secondaryCta) && (
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  {primaryCta && (
+                    <Link
+                      href={primaryCta.href}
+                      className="inline-flex items-center justify-center gap-2 rounded-full bg-orange px-7 py-3 text-sm font-heading font-bold text-white shadow-xl shadow-black/20 transition-all duration-300 hover:bg-orange-hover hover:-translate-y-0.5"
+                    >
+                      <CalendarCheck className="h-4 w-4" />
+                      {primaryCta.label}
+                    </Link>
+                  )}
+                  {secondaryCta && (
+                    <Link
+                      href={secondaryCta.href}
+                      className="inline-flex items-center justify-center gap-2 rounded-full border border-white/55 bg-white/10 px-7 py-3 text-sm font-heading font-bold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-dark"
+                    >
+                      {secondaryCta.label}
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  )}
+                </div>
+              )}
+            </div>
+
+            {stats.length > 0 && (
+              <div className="hidden rounded-2xl border border-white/20 bg-dark/50 p-4 shadow-2xl shadow-black/25 backdrop-blur-md md:block">
+                <div className="grid grid-cols-1 gap-3">
+                  {stats.map((stat) => (
+                    <div
+                      key={`${stat.value}-${stat.label}`}
+                      className="rounded-xl border border-white/15 bg-white/10 px-4 py-3"
+                    >
+                      <p className="font-heading text-2xl font-bold text-sun">
+                        {stat.value}
+                      </p>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-white/70">
+                        {stat.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       )}
 

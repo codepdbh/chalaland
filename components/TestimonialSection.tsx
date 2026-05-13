@@ -4,7 +4,7 @@ import { useState, useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { testimonials } from "@/data/testimonials";
-import { cn } from "@/lib/utils";
+import { cn, getAssetPath } from "@/lib/utils";
 
 export default function TestimonialSection() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -30,11 +30,20 @@ export default function TestimonialSection() {
   }, [emblaApi]);
 
   return (
-    <section className="bg-teal py-16 md:py-20 px-4">
+    <section
+      className="relative overflow-hidden bg-dark py-16 md:py-24 px-4"
+      style={{
+        backgroundImage: `linear-gradient(90deg, rgba(23,34,33,.92), rgba(23,34,33,.72)), url(${getAssetPath("/assets/gallery/community-1.jpg")})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="mx-auto max-w-4xl relative">
         {/* Quote icon */}
         <div className="flex justify-center mb-6">
-          <Quote className="w-10 h-10 text-white/30" />
+          <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/15 bg-white/10 backdrop-blur-sm">
+            <Quote className="w-9 h-9 text-sun" />
+          </div>
         </div>
 
         {/* Carousel */}

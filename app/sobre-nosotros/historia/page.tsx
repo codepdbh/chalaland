@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import SectionTitle from "@/components/SectionTitle";
 import CTAButton from "@/components/CTAButton";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Nuestra Historia",
@@ -61,20 +62,16 @@ const timeline = [
 
 export default function HistoriaPage() {
   return (
-    <div className="pt-[130px] lg:pt-[140px]">
-      {/* Hero */}
-      <section className="relative h-[30vh] sm:h-[35vh] bg-dark flex items-center justify-center">
-        <div className="text-center px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white uppercase">
-            Nuestra Historia
-          </h1>
-          <p className="mt-3 text-white/70 text-lg">Un camino de conservación y comunidad</p>
-          <div className="mt-4 h-1 w-16 bg-orange mx-auto rounded-full" />
-        </div>
-      </section>
+    <>
+      <PageHero
+        title="Nuestra Historia"
+        eyebrow="Memoria y territorio"
+        subtitle="Un camino de conservación y comunidad contado desde quienes decidieron cuidar el bosque desde adentro."
+        image="/assets/gallery/landscape-4.jpg"
+      />
 
       {/* Content */}
-      <section className="bg-smoke py-14 md:py-18 px-4">
+      <section className="canopy-section py-14 md:py-20 px-4">
         <div className="mx-auto max-w-4xl">
           {/* Intro */}
           <div className="mb-14">
@@ -104,7 +101,7 @@ export default function HistoriaPage() {
                   </div>
 
                   {/* Card */}
-                  <div className="flex-1 bg-white border border-gray-200 rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex-1 bg-white border border-gray-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
                     <span className="md:hidden inline-block px-3 py-1 bg-orange text-white text-xs font-bold rounded-full mb-2">
                       {item.year}
                     </span>
@@ -128,6 +125,6 @@ export default function HistoriaPage() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

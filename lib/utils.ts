@@ -18,7 +18,12 @@ export function slugify(text: string): string {
 
 /** Format a date string to readable format */
 export function formatDate(dateString: string): string {
-  const date = new Date(dateString);
+  const [year, month, day] = dateString.split("-").map(Number);
+  const date =
+    year && month && day
+      ? new Date(year, month - 1, day)
+      : new Date(dateString);
+
   return date.toLocaleDateString("es-ES", {
     year: "numeric",
     month: "long",

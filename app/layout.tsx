@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieBanner from "@/components/CookieBanner";
 import BackToTopButton from "@/components/BackToTopButton";
+import { siteConfig } from "@/data/site";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,12 +22,13 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: "EcoLodge Amazonia | Albergue Ecológico en la Amazonía",
-    template: "%s | EcoLodge Amazonia",
+    default: `${siteConfig.siteName} | ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.siteName}`,
   },
   description:
-    "Descubre la magia de la Amazonía boliviana en nuestro albergue ecológico. Turismo comunitario, naturaleza y cultura en el corazón del parque nacional.",
+    "Vive la Amazonía boliviana desde un ecolodge comunitario: paquetes de naturaleza, cultura local, senderos, lago y guías naturalistas.",
   keywords: [
     "ecolodge",
     "albergue ecológico",
@@ -39,12 +41,13 @@ export const metadata: Metadata = {
     "ecoturismo",
   ],
   openGraph: {
-    title: "EcoLodge Amazonia | Albergue Ecológico",
+    title: `${siteConfig.siteName} | Ecolodge comunitario amazónico`,
     description:
-      "Turismo comunitario y naturaleza en la Amazonía boliviana.",
+      "Turismo comunitario, naturaleza y cultura viva en la Amazonía boliviana.",
     type: "website",
     locale: "es_BO",
-    siteName: "EcoLodge Amazonia",
+    siteName: siteConfig.siteName,
+    images: [{ url: "/assets/hero/hero-placeholder.jpg" }],
   },
 };
 

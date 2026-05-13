@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { cn, formatDate, getAssetPath } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
+import { formatDate, getAssetPath } from "@/lib/utils";
 import type { BlogPost } from "@/data/blog";
 
 interface BlogCardProps {
@@ -8,15 +9,15 @@ interface BlogCardProps {
 
 export default function BlogCard({ post }: BlogCardProps) {
   return (
-    <article className="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-gray-100">
+    <article className="group overflow-hidden rounded-2xl border border-white bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/10">
       {/* Image */}
       <div className="relative h-48 sm:h-52 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
           style={{ backgroundImage: `url(${getAssetPath(post.image)})` }}
         />
-        <div className="absolute top-3 left-3">
-          <span className="px-3 py-1 bg-orange text-white text-xs font-semibold rounded-full">
+        <div className="absolute left-3 top-3">
+          <span className="rounded-full bg-orange px-3 py-1 text-xs font-bold text-white shadow-sm">
             {post.category}
           </span>
         </div>
@@ -30,7 +31,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           <span>{post.readTime} lectura</span>
         </div>
 
-        <h3 className="font-heading font-bold text-dark text-lg mb-2 group-hover:text-orange transition-colors line-clamp-2">
+        <h3 className="font-heading text-xl font-bold text-dark mb-2 group-hover:text-orange transition-colors line-clamp-2">
           <Link href={`/blog/${post.slug}`}>{post.title}</Link>
         </h3>
 
@@ -40,9 +41,10 @@ export default function BlogCard({ post }: BlogCardProps) {
 
         <Link
           href={`/blog/${post.slug}`}
-          className="inline-block text-sm font-semibold text-teal hover:text-teal-hover transition-colors"
+          className="inline-flex items-center gap-2 text-sm font-bold text-teal hover:text-teal-hover transition-colors"
         >
-          Leer más →
+          Leer más
+          <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
     </article>

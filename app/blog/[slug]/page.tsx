@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { blogPosts } from "@/data/blog";
 import { formatDate } from "@/lib/utils";
 import BlogCard from "@/components/BlogCard";
+import PageHero from "@/components/PageHero";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -43,51 +44,93 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     .filter((p) => p.slug !== slug)
     .slice(0, 2);
 
-  // Simple markdown-like rendering (paragraphs and headings)
+  // Simple markdown-like rendering (paragraphs, lists and headings)
   const renderContent = (content: string) => {
-    return content.split("\n\n").map((block, i) => {
+    const elements: React.ReactNode[] = [];
+    let paragraph: string[] = [];
+    let list: string[] = [];
+
+    const flushParagraph = () => {
+      if (paragraph.length === 0) return;
+      elements.push(
+        <p key={`p-${elements.length}`} className="mb-4 text-sm leading-relaxed text-gray-text">
+          {paragraph.join(" ")}
+        </p>
+      );
+      paragraph = [];
+    };
+
+    const flushList = () => {
+      if (list.length === 0) return;
+      elements.push(
+        <ul
+          key={`ul-${elements.length}`}
+          className="my-5 list-disc space-y-2 pl-5 text-sm leading-relaxed text-gray-text"
+        >
+          {list.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      );
+      list = [];
+    };
+
+    content.split("\n").forEach((line) => {
+      const block = line.trim();
+
+      if (!block) {
+        flushParagraph();
+        flushList();
+        return;
+      }
+
       if (block.startsWith("### ")) {
-        return (
-          <h3 key={i} className="text-lg font-heading font-bold text-dark mt-6 mb-2">
+        flushParagraph();
+        flushList();
+        elements.push(
+          <h3 key={`h3-${elements.length}`} className="mt-7 mb-2 font-heading text-lg font-bold text-dark">
             {block.replace("### ", "")}
           </h3>
         );
+        return;
       }
+
       if (block.startsWith("## ")) {
-        return (
-          <h2 key={i} className="text-xl font-heading font-bold text-dark mt-8 mb-3">
+        flushParagraph();
+        flushList();
+        elements.push(
+          <h2 key={`h2-${elements.length}`} className="mt-9 mb-3 font-heading text-2xl font-bold text-dark">
             {block.replace("## ", "")}
           </h2>
         );
+        return;
       }
+
       if (block.startsWith("- ")) {
-        const items = block.split("\n").filter((l) => l.startsWith("- "));
-        return (
-          <ul key={i} className="list-disc list-inside space-y-1 text-gray-text text-sm my-4">
-            {items.map((item, j) => (
-              <li key={j}>{item.replace("- ", "")}</li>
-            ))}
-          </ul>
-        );
+        flushParagraph();
+        list.push(block.replace("- ", ""));
+        return;
       }
-      return (
-        <p key={i} className="text-gray-text text-sm leading-relaxed mb-4">
-          {block}
-        </p>
-      );
+
+      flushList();
+      paragraph.push(block);
     });
+
+    flushParagraph();
+    flushList();
+
+    return elements;
   };
 
   return (
-    <div className="pt-[130px] lg:pt-[140px]">
-      {/* Hero Image */}
-      <section className="relative h-[30vh] sm:h-[40vh] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${post.image})` }}
-        />
-        <div className="absolute inset-0 bg-black/50" />
-      </section>
+    <>
+      <PageHero
+        title={post.title}
+        subtitle={post.excerpt}
+        eyebrow={post.category}
+        image={post.image}
+        align="left"
+      />
 
       {/* Content */}
       <section className="bg-white py-12 md:py-16 px-4">
@@ -110,11 +153,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <span>•</span>
             <span>{post.readTime} lectura</span>
           </div>
-
-          {/* Title */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-dark mb-6">
-            {post.title}
-          </h1>
 
           {/* Author */}
           <p className="text-sm text-gray-text mb-8 pb-6 border-b border-gray-200">
@@ -139,6 +177,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           )}
         </div>
       </section>
-    </div>
+    </>
   );
 }

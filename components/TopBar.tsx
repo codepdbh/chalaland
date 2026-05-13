@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, Phone, Globe } from "lucide-react";
+import { Globe, Mail, MessageCircle, Phone } from "lucide-react";
 import { siteConfig } from "@/data/site";
 
 export default function TopBar() {
   return (
-    <div className="bg-dark-soft text-white/70 text-xs">
+    <div className="bg-dark-soft text-white/75 text-xs border-b border-white/10">
       <div className="mx-auto max-w-7xl px-4 flex items-center justify-between h-9">
         {/* Left: Contact */}
         <div className="flex items-center gap-4">
@@ -19,8 +19,17 @@ export default function TopBar() {
             <span className="hidden sm:inline">Contáctanos</span>
           </Link>
           <Link
-            href={`tel:${siteConfig.phone}`}
+            href={`https://wa.me/${siteConfig.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-1.5 hover:text-white transition-colors"
+          >
+            <MessageCircle className="w-3.5 h-3.5" />
+            <span className="hidden md:inline">WhatsApp</span>
+          </Link>
+          <Link
+            href={`tel:${siteConfig.phone}`}
+            className="hidden items-center gap-1.5 hover:text-white transition-colors sm:flex"
           >
             <Phone className="w-3.5 h-3.5" />
             <span>{siteConfig.phone}</span>
@@ -29,12 +38,15 @@ export default function TopBar() {
 
         {/* Right: Social + Language */}
         <div className="flex items-center gap-4">
+          <span className="hidden text-white/55 md:inline">
+            Cupos reducidos por salida
+          </span>
           <Link
-            href={siteConfig.facebook}
+            href={siteConfig.instagram}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition-colors"
-            aria-label="Facebook"
+            aria-label="Instagram"
           >
             <Globe className="w-3.5 h-3.5" />
           </Link>

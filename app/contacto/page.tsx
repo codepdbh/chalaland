@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { contactInfo } from "@/data/contact";
 import { siteConfig } from "@/data/site";
 import ContactForm from "@/components/ContactForm";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Contacto",
@@ -13,22 +14,16 @@ export const metadata: Metadata = {
 
 export default function ContactoPage() {
   return (
-    <div className="pt-[130px] lg:pt-[140px]">
-      {/* Hero */}
-      <section className="relative h-[30vh] sm:h-[35vh] bg-dark flex items-center justify-center">
-        <div className="text-center px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white uppercase">
-            Contacto
-          </h1>
-          <p className="mt-3 text-white/70 text-lg">
-            Estamos aquí para ayudarte a planificar tu aventura
-          </p>
-          <div className="mt-4 h-1 w-16 bg-orange mx-auto rounded-full" />
-        </div>
-      </section>
+    <>
+      <PageHero
+        title="Contacto"
+        eyebrow="Planifica tu viaje"
+        subtitle="Cuéntanos fechas, intereses y número de viajeros. Te ayudamos a elegir el paquete con mejor ritmo para tu visita."
+        image="/assets/gallery/lodge-4.jpg"
+      />
 
       {/* Content */}
-      <section className="bg-smoke py-14 md:py-18 px-4">
+      <section className="canopy-section py-14 md:py-20 px-4">
         <div className="mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
             {/* Contact Info Sidebar */}
@@ -125,7 +120,7 @@ export default function ContactoPage() {
 
             {/* Contact Form */}
             <div className="lg:col-span-3">
-              <div className="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-gray-100">
+              <div className="glass-surface rounded-2xl p-6 md:p-8">
                 <h2 className="font-heading font-bold text-dark text-xl mb-2">
                   Envíanos un Mensaje
                 </h2>
@@ -138,6 +133,6 @@ export default function ContactoPage() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

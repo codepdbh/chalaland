@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import SectionTitle from "@/components/SectionTitle";
 import CTAButton from "@/components/CTAButton";
+import PageHero from "@/components/PageHero";
+import { getAssetPath } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Nuestras Instalaciones",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 const facilities = [
   {
     title: "Cabañas",
+    image: "/assets/gallery/lodge-2.jpg",
     description:
       "Nuestras cabañas están construidas con materiales locales y técnicas tradicionales, integrándose armoniosamente con el entorno. Cada cabaña cuenta con camas cómodas, mosquiteros, baño privado o compartido según el tipo, y vistas al bosque o al lago. La electricidad es provista por paneles solares.",
     features: [
@@ -23,6 +25,7 @@ const facilities = [
   },
   {
     title: "Comedor",
+    image: "/assets/gallery/lodge-3.jpg",
     description:
       "El comedor es el corazón social del albergue. Con estructura abierta que permite disfrutar de la brisa y los sonidos del bosque mientras se degusta la cocina local. Nuestros chefs preparan platos con ingredientes frescos cultivados por la comunidad.",
     features: [
@@ -35,6 +38,7 @@ const facilities = [
   },
   {
     title: "Senderos de Interpretación",
+    image: "/assets/gallery/landscape-4.jpg",
     description:
       "Más de 50 kilómetros de senderos cuidadosamente trazados atraviesan diferentes ecosistemas del bosque. Cada sendero está señalizado y mantenido por la comunidad, ofreciendo diferentes niveles de dificultad y experiencias únicas.",
     features: [
@@ -47,6 +51,7 @@ const facilities = [
   },
   {
     title: "Área de Descanso",
+    image: "/assets/gallery/lodge-5.jpg",
     description:
       "Hamacas y espacios de lectura distribuidos en terrazas con vista al lago y al bosque. El lugar perfecto para relajarse después de una jornada de exploración y conectar con la tranquilidad del entorno.",
     features: [
@@ -61,32 +66,29 @@ const facilities = [
 
 export default function InstalacionesPage() {
   return (
-    <div className="pt-[130px] lg:pt-[140px]">
-      {/* Hero */}
-      <section className="relative h-[30vh] sm:h-[35vh] bg-dark flex items-center justify-center">
-        <div className="text-center px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white uppercase">
-            Nuestras Instalaciones
-          </h1>
-          <p className="mt-3 text-white/70 text-lg">Confort en armonía con la naturaleza</p>
-          <div className="mt-4 h-1 w-16 bg-orange mx-auto rounded-full" />
-        </div>
-      </section>
+    <>
+      <PageHero
+        title="Nuestras Instalaciones"
+        eyebrow="Confort sencillo"
+        subtitle="Espacios construidos para descansar, escuchar el bosque y mantener una relación amable con el entorno."
+        image="/assets/gallery/lodge-1.jpg"
+      />
 
       {/* Content */}
-      <section className="bg-smoke py-14 md:py-18 px-4">
+      <section className="canopy-section py-14 md:py-20 px-4">
         <div className="mx-auto max-w-5xl">
           <div className="space-y-12">
             {facilities.map((facility, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100"
+                className="overflow-hidden rounded-2xl border border-white bg-white shadow-sm"
               >
-                {/* Placeholder Image */}
-                <div className="h-48 sm:h-56 bg-gradient-to-br from-dark-light to-dark flex items-center justify-center">
-                  <span className="text-white/40 text-sm font-heading">
-                    [Imagen: {facility.title}]
-                  </span>
+                <div className="relative h-52 sm:h-64">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${getAssetPath(facility.image)})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark/50 to-transparent" />
                 </div>
 
                 {/* Content */}
@@ -124,6 +126,6 @@ export default function InstalacionesPage() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

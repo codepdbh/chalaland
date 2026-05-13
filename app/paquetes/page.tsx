@@ -3,6 +3,7 @@ import { packages } from "@/data/packages";
 import SectionTitle from "@/components/SectionTitle";
 import PackageCard from "@/components/PackageCard";
 import CTAButton from "@/components/CTAButton";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Nuestros Paquetes",
@@ -12,22 +13,16 @@ export const metadata: Metadata = {
 
 export default function PaquetesPage() {
   return (
-    <div className="pt-[130px] lg:pt-[140px]">
-      {/* Hero */}
-      <section className="relative h-[30vh] sm:h-[35vh] bg-dark flex items-center justify-center">
-        <div className="text-center px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white uppercase">
-            Nuestros Paquetes
-          </h1>
-          <p className="mt-3 text-white/70 text-lg">
-            Elige la aventura que mejor se adapte a tu tiempo
-          </p>
-          <div className="mt-4 h-1 w-16 bg-orange mx-auto rounded-full" />
-        </div>
-      </section>
+    <>
+      <PageHero
+        title="Nuestros Paquetes"
+        eyebrow="Ritmos de viaje"
+        subtitle="Elige una experiencia según tu tiempo, energía y ganas de internarte en la selva."
+        image="/assets/gallery/landscape-2.jpg"
+      />
 
       {/* Packages Grid */}
-      <section className="bg-smoke py-14 md:py-18 px-4">
+      <section className="canopy-section py-14 md:py-20 px-4">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {packages.map((pkg) => (
@@ -77,11 +72,11 @@ export default function PaquetesPage() {
 
           {/* National Promo */}
           <div id="nacionales" className="mt-16 scroll-mt-40">
-            <div className="bg-teal/10 border border-teal/30 rounded-lg p-8 text-center max-w-2xl mx-auto">
+            <div className="dark-card rounded-2xl p-8 text-center max-w-2xl mx-auto shadow-xl">
               <h3 className="font-heading font-bold text-teal text-xl mb-3">
                 🇧🇴 Tour Especial para Nacionales
               </h3>
-              <p className="text-gray-text text-sm mb-6">
+              <p className="text-white/70 text-sm mb-6">
                 Si eres boliviano/a, tenemos precios especiales y paquetes diseñados especialmente
                 para ti. Porque creemos que los bolivianos merecen conocer las maravillas de su propio país.
               </p>
@@ -92,6 +87,6 @@ export default function PaquetesPage() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

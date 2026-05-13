@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect } from "react";
+import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { awards } from "@/data/awards";
@@ -27,11 +28,12 @@ export default function AwardsCarousel() {
   }, [emblaApi]);
 
   return (
-    <section className="bg-white py-14 md:py-18 px-4">
+    <section className="bg-dark py-16 md:py-20 px-4 text-white">
       <div className="mx-auto max-w-6xl">
         <SectionTitle
           title="Reconocimientos"
-          subtitle="Premios y certificaciones que respaldan nuestro compromiso"
+          subtitle="Una forma de viajar respaldada por conservación, organización comunitaria y hospitalidad local."
+          variant="white"
         />
 
         <div className="relative">
@@ -52,13 +54,15 @@ export default function AwardsCarousel() {
                   key={award.id}
                   className="flex-[0_0_50%] sm:flex-[0_0_33.333%] md:flex-[0_0_25%] lg:flex-[0_0_20%] px-3"
                 >
-                  <div className="flex flex-col items-center justify-center h-32 bg-smoke rounded-lg p-4 hover:shadow-md transition-shadow">
-                    <img 
+                  <div className="flex h-36 flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/10 p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/15">
+                    <Image
                       src={getAssetPath(award.image)}
                       alt={award.title}
-                      className="w-16 h-16 mb-2 object-contain"
+                      width={64}
+                      height={64}
+                      className="mb-3 h-16 w-16 object-contain"
                     />
-                    <p className="text-[10px] text-gray-text text-center leading-tight mt-1">
+                    <p className="text-center text-[11px] leading-tight text-white/70">
                       {award.title}
                     </p>
                   </div>

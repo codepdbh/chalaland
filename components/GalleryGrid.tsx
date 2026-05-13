@@ -23,7 +23,7 @@ export default function GalleryGrid() {
   return (
     <>
       {/* Category Filters */}
-      <div className="flex flex-wrap justify-center gap-2 mb-8">
+      <div className="mb-8 flex flex-wrap justify-center gap-2 rounded-2xl bg-white p-2 shadow-sm">
         <button
           onClick={() => setActiveCategory("all")}
           className={cn(
@@ -52,26 +52,33 @@ export default function GalleryGrid() {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {filteredImages.map((image, index) => (
+      <div className="grid auto-rows-[220px] grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {filteredImages.map((image, index) => {
+          const featured = index % 9 === 0;
+
+          return (
           <button
             key={image.id}
             onClick={() => openLightbox(index)}
-            className="group relative aspect-[4/3] overflow-hidden rounded-lg cursor-pointer"
+            className={cn(
+              "group relative overflow-hidden rounded-2xl cursor-pointer shadow-sm",
+              featured && "md:col-span-2 md:row-span-2"
+            )}
             aria-label={`Ver imagen: ${image.alt}`}
           >
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
               style={{ backgroundImage: `url(${getAssetPath(image.src)})` }}
             />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
-            <div className="absolute inset-0 flex items-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <p className="text-white text-xs bg-black/50 px-2 py-1 rounded">
+            <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-transparent to-transparent opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+            <div className="absolute inset-0 flex items-end p-4">
+              <p className="rounded-full bg-black/45 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 {image.alt}
               </p>
             </div>
           </button>
-        ))}
+          );
+        })}
       </div>
 
       {/* Empty State */}

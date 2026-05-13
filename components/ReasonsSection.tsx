@@ -16,30 +16,36 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function ReasonsSection() {
   return (
-    <section className="bg-smoke py-16 md:py-20 px-4">
-      <div className="mx-auto max-w-4xl">
+    <section className="bg-white py-16 md:py-24 px-4">
+      <div className="mx-auto max-w-7xl">
         <SectionTitle
           title="Razones para Visitarnos"
-          subtitle="Descubre por qué somos un destino único en la Amazonía"
+          subtitle="No se trata solo de llegar a un lugar bonito. Se trata de cómo te recibe, quién lo cuida y qué queda después de tu visita."
         />
 
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-7">
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className="flex items-start gap-4 bg-white rounded-lg p-5 shadow-sm hover:shadow-md transition-shadow duration-300"
+              className={`group rounded-2xl border border-gray-100 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                index === 0 || index === 3
+                  ? "dark-card text-white lg:col-span-3"
+                  : "bg-smoke text-dark lg:col-span-2"
+              }`}
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-orange/10 flex items-center justify-center">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange/10 transition-transform duration-300 group-hover:scale-110">
                 {iconMap[reason.icon] || <Award className="w-7 h-7 text-orange" />}
               </div>
-              <div>
-                <h3 className="font-heading font-semibold text-dark text-base mb-1">
-                  {reason.title}
-                </h3>
-                <p className="text-sm text-gray-text leading-relaxed">
-                  {reason.description}
-                </p>
-              </div>
+              <h3 className="mt-5 font-heading text-lg font-bold">
+                {reason.title}
+              </h3>
+              <p
+                className={`mt-2 text-sm leading-relaxed ${
+                  index === 0 || index === 3 ? "text-white/70" : "text-gray-text"
+                }`}
+              >
+                {reason.description}
+              </p>
             </div>
           ))}
         </div>

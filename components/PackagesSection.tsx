@@ -5,11 +5,11 @@ import CTAButton from "./CTAButton";
 
 export default function PackagesSection() {
   return (
-    <section className="bg-smoke py-16 md:py-20 px-4">
+    <section className="canopy-section py-16 md:py-24 px-4">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
           title="Nuestros Paquetes"
-          subtitle="Elige la aventura que mejor se adapte a tu tiempo y estilo"
+          subtitle="Cada itinerario tiene su propio ritmo: una entrada breve a la selva, una inmersión profunda o una expedición completa por lago, bosque y comunidad."
         />
 
         {/* Package Grid */}
@@ -28,7 +28,7 @@ export default function PackagesSection() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
           <CTAButton href="/paquetes#medida" variant="outline">
             Paquetes a Medida
           </CTAButton>

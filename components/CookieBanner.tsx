@@ -26,7 +26,7 @@ export default function CookieBanner() {
   return (
     <div
       className={cn(
-        "fixed bottom-0 left-0 right-0 z-[100] bg-dark-soft/95 backdrop-blur-sm border-t border-dark-line",
+        "fixed bottom-0 left-0 right-0 z-[100] bg-dark-soft/95 backdrop-blur-md border-t border-white/10",
         "transform transition-transform duration-500",
         visible ? "translate-y-0" : "translate-y-full"
       )}
@@ -51,7 +51,7 @@ export default function CookieBanner() {
         </p>
         <button
           onClick={handleAccept}
-          className="flex-shrink-0 px-6 py-2 bg-orange text-white text-sm font-semibold rounded-full hover:bg-orange-hover transition-colors"
+          className="flex-shrink-0 px-6 py-2 bg-orange text-white text-sm font-semibold rounded-full hover:bg-orange-hover transition-all duration-300 hover:-translate-y-0.5"
         >
           Estoy de acuerdo
         </button>

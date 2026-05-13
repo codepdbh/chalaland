@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { cn, getAssetPath } from "@/lib/utils";
-import { Check, X as XIcon, Lightbulb, Backpack, ShieldCheck } from "lucide-react";
+import { Check, X as XIcon, Lightbulb, Backpack, ShieldCheck, Clock, Moon } from "lucide-react";
 import type { Package } from "@/data/packages";
 import SectionTitle from "./SectionTitle";
 import ItineraryTimeline from "./ItineraryTimeline";
 import PriceTable from "./PriceTable";
 import CTAButton from "./CTAButton";
+import PageHero from "./PageHero";
 
 interface PackageDetailProps {
   pkg: Package;
@@ -16,23 +16,25 @@ export default function PackageDetail({ pkg }: PackageDetailProps) {
   if (!pkg) return notFound();
 
   return (
-    <div className="pt-[130px] lg:pt-[140px]">
-      {/* Hero Banner */}
-      <section className="relative h-[30vh] sm:h-[40vh] overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${getAssetPath(pkg.image)})` }}
-        />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white">
-            {pkg.title}
-          </h1>
-          <p className="mt-2 text-lg text-white/80">
-            {pkg.duration} – {pkg.nights}
-          </p>
+    <>
+      <PageHero
+        title={pkg.title}
+        subtitle={pkg.shortDescription}
+        eyebrow="Paquete amazónico"
+        image={pkg.image}
+        align="left"
+      >
+        <div className="flex flex-wrap gap-3">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 text-sm font-bold text-dark">
+            <Clock className="h-4 w-4 text-orange" />
+            {pkg.duration}
+          </span>
+          <span className="inline-flex items-center gap-2 rounded-full bg-dark/70 px-4 py-2 text-sm font-bold text-white">
+            <Moon className="h-4 w-4 text-sun" />
+            {pkg.nights}
+          </span>
         </div>
-      </section>
+      </PageHero>
 
       {/* Content */}
       <div className="mx-auto max-w-5xl px-4 py-12 md:py-16">
@@ -71,7 +73,7 @@ export default function PackageDetail({ pkg }: PackageDetailProps) {
         </div>
 
         {/* Special promotion */}
-        <div className="mb-14 bg-teal/10 border border-teal/30 rounded-lg p-6">
+        <div className="mb-14 rounded-2xl border border-teal/30 bg-teal/10 p-6">
           <h3 className="font-heading font-bold text-teal text-lg mb-2">
             ¿Eres de Bolivia?
           </h3>
@@ -185,6 +187,6 @@ export default function PackageDetail({ pkg }: PackageDetailProps) {
           </CTAButton>
         </div>
       </div>
-    </div>
+    </>
   );
 }

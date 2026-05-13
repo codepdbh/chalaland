@@ -13,7 +13,7 @@ export default function ItineraryTimeline({ itinerary }: ItineraryTimelineProps)
       <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-orange/20 hidden md:block" />
 
       <div className="space-y-8">
-        {itinerary.map((day, index) => (
+        {itinerary.map((day) => (
           <div key={day.day} className="relative flex gap-6">
             {/* Day Circle */}
             <div className="hidden md:flex flex-shrink-0 w-12 h-12 rounded-full bg-orange text-white items-center justify-center font-heading font-bold text-sm z-10">
@@ -23,8 +23,8 @@ export default function ItineraryTimeline({ itinerary }: ItineraryTimelineProps)
             {/* Card */}
             <div
               className={cn(
-                "flex-1 bg-white border border-gray-200 rounded-lg p-5 md:p-6 shadow-sm",
-                "hover:shadow-md transition-shadow duration-300"
+                "flex-1 bg-white border border-gray-200 rounded-2xl p-5 md:p-6 shadow-sm",
+                "hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300"
               )}
             >
               {/* Mobile day badge */}
