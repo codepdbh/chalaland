@@ -17,7 +17,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <Hero
         kicker="Ecolodge comunitario en la Amazonía boliviana"
-        title="Chalalán se vive lento, profundo y con la selva alrededor"
+        title="Turismo Solidario se vive lento, profundo y con la selva alrededor"
         subtitle="Paquetes diseñados con guías locales, navegación por el lago, senderos de interpretación y encuentros culturales que sostienen a la comunidad."
         primaryCta={{ href: "/reservas", label: "Consultar disponibilidad" }}
         secondaryCta={{ href: "/paquetes", label: "Explorar paquetes" }}

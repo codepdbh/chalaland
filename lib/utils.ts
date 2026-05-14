@@ -42,5 +42,5 @@ export function getAssetPath(path: string): string {
   if (!path) return "";
   if (path.startsWith("http") || path.startsWith("data:")) return path;
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
-  return `/chalaland${cleanPath}`;
+  return `/turismo-solidario${cleanPath}`;
 }

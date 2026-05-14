@@ -8,11 +8,11 @@ const nextConfig: NextConfig = {
 
   /**
    * Base path for GitHub Pages.
-   * If your repo is: github.com/username/chalaland
-   * Then set basePath to: "/chalaland"
+   * If your repo is: github.com/username/turismo-solidario
+   * Then set basePath to: "/turismo-solidario"
    * If using a custom domain, leave as empty string ""
    */
-  basePath: "/chalaland",
+  basePath: "/turismo-solidario",
 
   /** Trailing slashes for static file compatibility */
   trailingSlash: true,

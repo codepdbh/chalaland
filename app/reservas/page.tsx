@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ReservationForm from "@/components/ReservationForm";
 import PageHero from "@/components/PageHero";
+import { getAssetPath } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Reservas",
@@ -45,11 +46,11 @@ export default function ReservasPage() {
             <div className="lg:col-span-2 order-1 lg:order-2">
               {/* Logo placeholder */}
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-6 text-center">
-                <div className="w-20 h-20 rounded-full bg-orange flex items-center justify-center mx-auto mb-4 shadow-lg shadow-orange/20">
-                  <span className="text-white font-heading font-bold text-xl">CH</span>
+                <div className="w-20 h-20 rounded-full mx-auto mb-4 shadow-lg shadow-orange/20 overflow-hidden relative">
+                  <img src={getAssetPath("/assets/logo.png")} alt="Turismo Solidario Logo" className="w-full h-full object-cover" />
                 </div>
                 <h3 className="font-heading font-bold text-dark text-lg mb-2">
-                  Chalalán Ecolodge
+                  Turismo Solidario
                 </h3>
                 <p className="text-sm text-gray-text">
                   Albergue Ecológico Comunitario

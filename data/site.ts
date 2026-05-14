@@ -5,13 +5,13 @@
 
 export const siteConfig = {
   /** Site name displayed in header, footer, and metadata */
-  siteName: "Chalalán Ecolodge",
+  siteName: "Turismo Solidario",
 
   /** Tagline for SEO and hero sections */
   tagline: "Naturaleza, comunidad y selva viva",
 
   /** Public production URL used for social metadata */
-  siteUrl: "https://cecasem.github.io/chalaland",
+  siteUrl: "https://cecasem.github.io/turismo-solidario",
 
   /** Contact phone number */
   phone: "(591) 71234567",
@@ -42,7 +42,7 @@ export const siteConfig = {
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3867.123!2d-67.53!3d-14.44!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDI2JzI0LjAiUyA2N8KwMzEnNDguMCJX!5e0!3m2!1ses!2sbo!4v1234567890",
 
   /** Copyright text */
-  copyright: `© ${new Date().getFullYear()} Chalalán Ecolodge — Todos los derechos reservados`,
+  copyright: `© ${new Date().getFullYear()} Turismo Solidario — Todos los derechos reservados`,
 
   /** Credits */
   credits: "Diseño y desarrollo web personalizado",

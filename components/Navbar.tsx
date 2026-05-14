@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { mainNavigation } from "@/data/navigation";
 import { siteConfig } from "@/data/site";
-import { cn } from "@/lib/utils";
+import { cn, getAssetPath } from "@/lib/utils";
 import DropdownMenu from "./DropdownMenu";
 import MobileMenu from "./MobileMenu";
 
@@ -21,10 +21,8 @@ export default function Navbar() {
       <div className="mx-auto max-w-7xl px-4 flex items-center justify-between h-[90px] lg:h-[100px]">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 flex-shrink-0" aria-label="Inicio">
-          <div className="w-[58px] h-[58px] lg:w-[66px] lg:h-[66px] rounded-full bg-orange text-white border border-white/20 flex items-center justify-center overflow-hidden shadow-lg shadow-black/20">
-            <span className="font-heading font-bold text-lg lg:text-xl leading-none">
-              CH
-            </span>
+          <div className="w-[58px] h-[58px] lg:w-[66px] lg:h-[66px] rounded-full border border-white/20 flex items-center justify-center overflow-hidden shadow-lg shadow-black/20 relative">
+            <img src={getAssetPath("/assets/logo.png")} alt="Turismo Solidario Logo" className="w-full h-full object-cover bg-white" />
           </div>
           <div className="hidden sm:block">
             <p className="font-heading text-sm font-bold uppercase tracking-wide text-white">
