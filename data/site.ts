@@ -11,7 +11,7 @@ export const siteConfig = {
   tagline: "Naturaleza, comunidad y selva viva",
 
   /** Public production URL used for social metadata */
-  siteUrl: "https://cecasem.github.io/turismo-solidario",
+  siteUrl: "https://codepdbh.github.io/chalaland",
 
   /** Contact phone number */
   phone: "(591) 71234567",
