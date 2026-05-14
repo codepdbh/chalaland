@@ -46,8 +46,8 @@ export default function ReservasPage() {
             <div className="lg:col-span-2 order-1 lg:order-2">
               {/* Logo placeholder */}
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-6 text-center">
-                <div className="w-20 h-20 rounded-full mx-auto mb-4 shadow-lg shadow-orange/20 overflow-hidden relative">
-                  <img src={getAssetPath("/assets/logo.png")} alt="Turismo Solidario Logo" className="w-full h-full object-cover" />
+                <div className="w-20 h-20 rounded-full bg-white mx-auto mb-4 shadow-lg shadow-orange/20 overflow-hidden relative p-2">
+                  <img src={getAssetPath("/assets/logo.png")} alt="Turismo Solidario Logo" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="font-heading font-bold text-dark text-lg mb-2">
                   Turismo Solidario
