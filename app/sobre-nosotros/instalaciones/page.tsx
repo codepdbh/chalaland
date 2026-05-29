@@ -6,7 +6,7 @@ import { getAssetPath } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Nuestras Instalaciones",
   description:
-    "Descubre las cabañas, comedor, senderos y espacios de nuestro albergue ecológico en la Amazonía.",
+    "Descubre las eco-cabañas comunitarias y espacios de hospedaje de la ruta CECASEM.",
 };
 
 const facilities = [
@@ -14,52 +14,52 @@ const facilities = [
     title: "Cabañas",
     image: "/assets/gallery/lodge-2.jpg",
     description:
-      "Nuestras cabañas están construidas con materiales locales y técnicas tradicionales, integrándose armoniosamente con el entorno. Cada cabaña cuenta con camas cómodas, mosquiteros, baño privado o compartido según el tipo, y vistas al bosque o al lago. La electricidad es provista por paneles solares.",
+      "Las eco-cabañas son espacios de hospedaje comunitario vinculados a Campo Bello y Monte Rosa. Su función es recibir a visitantes durante la ruta y facilitar la convivencia con las comunidades anfitrionas.",
     features: [
-      "Camas con mosquiteros",
-      "Baño privado o compartido",
-      "Construcción con materiales locales",
-      "Ventilación natural cruzada",
-      "Vistas al bosque o lago",
+      "Hospedaje en cabañas comunitarias",
+      "Descanso durante la ruta",
+      "Cercanía a actividades locales",
+      "Atención previa coordinación",
+      "Convivencia comunitaria",
     ],
   },
   {
-    title: "Comedor",
+    title: "Alimentación Comunitaria",
     image: "/assets/gallery/lodge-3.jpg",
     description:
-      "El comedor es el corazón social del albergue. Con estructura abierta que permite disfrutar de la brisa y los sonidos del bosque mientras se degusta la cocina local. Nuestros chefs preparan platos con ingredientes frescos cultivados por la comunidad.",
+      "La alimentación forma parte central de la experiencia: desayuno con frutas de temporada, almuerzos comunitarios, pescado local, comida típica tsimane y bebidas tradicionales.",
     features: [
-      "Estructura abierta con vista al bosque",
-      "Cocina con productos locales",
-      "Agua potable purificada",
-      "Desayuno, almuerzo y cena incluidos",
-      "Opciones vegetarianas disponibles",
+      "Desayuno comunitario",
+      "Almuerzo tradicional",
+      "Cena en eco-cabañas",
+      "Bebidas típicas",
+      "Agua embotellada incluida",
     ],
   },
   {
-    title: "Senderos de Interpretación",
+    title: "Recorridos Internos",
     image: "/assets/gallery/landscape-4.jpg",
     description:
-      "Más de 50 kilómetros de senderos cuidadosamente trazados atraviesan diferentes ecosistemas del bosque. Cada sendero está señalizado y mantenido por la comunidad, ofreciendo diferentes niveles de dificultad y experiencias únicas.",
+      "Los recorridos internos por comunidad permiten conocer senderos naturales, áreas boscosas y espacios de interacción. La ficha técnica considera dificultad media y recorridos aproximados de 3 horas de ida y 3 horas de vuelta.",
     features: [
-      "50+ km de senderos señalizados",
-      "Diferentes niveles de dificultad",
-      "Torres de observación",
-      "Miradores panorámicos",
-      "Mantenimiento constante",
+      "Caminatas comunitarias",
+      "Dificultad media",
+      "Senderos naturales",
+      "Espacios de interacción local",
+      "Guía nativo",
     ],
   },
   {
-    title: "Área de Descanso",
+    title: "Tramo Fluvial",
     image: "/assets/gallery/lodge-5.jpg",
     description:
-      "Hamacas y espacios de lectura distribuidos en terrazas con vista al lago y al bosque. El lugar perfecto para relajarse después de una jornada de exploración y conectar con la tranquilidad del entorno.",
+      "La ruta incluye navegación en canoa desde Campo Bello hacia Monte Rosa, un tramo fluvial aproximado de 7,29 km dentro del recorrido San Borja - Monte Rosa.",
     features: [
-      "Hamacas con vista al lago",
-      "Área de lectura",
-      "Terraza de observación",
-      "Zona wifi limitada",
-      "Espacio para yoga y meditación",
+      "Canoa / vía fluvial",
+      "Campo Bello - Monte Rosa",
+      "Aproximadamente 1 h 40 min",
+      "Paisaje ribereño",
+      "Coordinación local",
     ],
   },
 ];
@@ -70,7 +70,7 @@ export default function InstalacionesPage() {
       <PageHero
         title="Nuestras Instalaciones"
         eyebrow="Confort sencillo"
-        subtitle="Espacios construidos para descansar, escuchar el bosque y mantener una relación amable con el entorno."
+        subtitle="Hospedaje comunitario, alimentación local, recorridos internos y navegación fluvial dentro de la ruta San Borja - Monte Rosa."
         image="/assets/gallery/lodge-1.jpg"
       />
 

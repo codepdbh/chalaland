@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import ReservationForm from "@/components/ReservationForm";
 import PageHero from "@/components/PageHero";
 import { getAssetPath } from "@/lib/utils";
@@ -7,7 +8,7 @@ import { getAssetPath } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Reservas",
   description:
-    "Solicita tu reserva en nuestro albergue ecológico. Elige tu paquete, fechas y tipo de habitación.",
+    "Solicita información y disponibilidad para los paquetes de la ruta turística comunitaria Eco-cabañas CECASEM.",
 };
 
 export default function ReservasPage() {
@@ -16,7 +17,7 @@ export default function ReservasPage() {
       <PageHero
         title="Reservas"
         eyebrow="Cupos y disponibilidad"
-        subtitle="Envíanos tu solicitud y confirmaremos fechas, logística y recomendaciones antes de cerrar la reserva."
+        subtitle="Envíanos tu solicitud y confirmaremos fechas, logística, comunidad anfitriona y recomendaciones antes de cerrar la reserva."
         image="/assets/gallery/landscape-6.jpg"
       />
 
@@ -32,7 +33,7 @@ export default function ReservasPage() {
                 </h2>
                 <p className="text-sm text-gray-text mb-6">
                   Completa el formulario y nos pondremos en contacto para confirmar disponibilidad
-                  y finalizar tu reserva. También puedes consultar nuestros{" "}
+                  y coordinar la ruta. También puedes consultar nuestros{" "}
                   <Link href="/paquetes" className="text-teal hover:underline">
                     paquetes disponibles
                   </Link>
@@ -47,13 +48,19 @@ export default function ReservasPage() {
               {/* Logo placeholder */}
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-6 text-center">
                 <div className="w-20 h-20 rounded-full bg-white mx-auto mb-4 shadow-lg shadow-orange/20 overflow-hidden relative p-2">
-                  <img src={getAssetPath("/assets/logo.png")} alt="Turismo Solidario Logo" className="w-full h-full object-contain" />
+                  <Image
+                    src={getAssetPath("/assets/logo.png")}
+                    alt="Eco-cabañas CECASEM"
+                    width={240}
+                    height={124}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <h3 className="font-heading font-bold text-dark text-lg mb-2">
-                  Turismo Solidario
+                  Eco-cabañas CECASEM
                 </h3>
                 <p className="text-sm text-gray-text">
-                  Albergue Ecológico Comunitario
+                  Ruta turística comunitaria
                 </p>
               </div>
 
@@ -64,12 +71,12 @@ export default function ReservasPage() {
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    "Turismo comunitario certificado",
-                    "Guías naturalistas bilingües",
-                    "Más de 25 años de experiencia",
-                    "Premios internacionales de sostenibilidad",
-                    "Confirmación en 24-48 horas",
-                    "Cancelación flexible",
+                    "Ruta San Borja - Monte Rosa",
+                    "Guía nativo y actividades guiadas",
+                    "Transporte terrestre y por río",
+                    "Hospedaje en cabañas comunitarias",
+                    "Convivencia con comunidades tsimanes",
+                    "Recomendaciones previas al viaje",
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm text-gray-text">
                       <span className="w-1.5 h-1.5 rounded-full bg-teal flex-shrink-0" />
@@ -82,18 +89,13 @@ export default function ReservasPage() {
               {/* Awards placeholder */}
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
                 <h3 className="font-heading font-semibold text-dark text-sm uppercase tracking-wide mb-4">
-                  Reconocimientos
+                  Datos rápidos
                 </h3>
-                <div className="flex flex-wrap gap-3 justify-center">
-                  {[1, 2, 3].map((i) => (
-                    <div
-                      key={i}
-                      className="w-16 h-16 rounded-full bg-smoke border border-gray-200 flex items-center justify-center"
-                    >
-                      <span className="text-xs text-gray-text/60">S{i}</span>
-                    </div>
-                  ))}
-                </div>
+                <ul className="space-y-2 text-sm text-gray-text">
+                  <li>Distancia total: 58,16 km ida y vuelta.</li>
+                  <li>Dificultad general: moderada.</li>
+                  <li>Comunidades: Galilea, San Antonio, Campo Bello y Monte Rosa.</li>
+                </ul>
               </div>
             </div>
           </div>

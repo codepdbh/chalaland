@@ -50,10 +50,11 @@ export default function DropdownMenu({ item, isActive }: DropdownMenuProps) {
     >
       <button
         className={cn(
-          "flex items-center gap-1 px-1 py-2 text-sm font-semibold tracking-wide transition-colors",
-          "text-white/90 hover:text-white",
-          isActive && "text-white"
+          "flex items-center gap-1 whitespace-nowrap px-3 py-2 text-sm font-semibold tracking-wide transition-all duration-200 rounded-lg",
+          "text-white/90 hover:text-white hover:bg-white/10",
+          isActive && "text-white bg-white/10"
         )}
+        style={{ textShadow: "0 1px 2px rgba(0,0,0,0.2)" }}
         onClick={() => setIsOpen(!isOpen)}
         onKeyDown={handleKeyDown}
         aria-expanded={isOpen}
@@ -71,12 +72,17 @@ export default function DropdownMenu({ item, isActive }: DropdownMenuProps) {
       {/* Dropdown Panel */}
       <div
         className={cn(
-          "absolute top-full left-0 min-w-[220px] bg-dark-light shadow-xl rounded-sm",
+          "absolute top-full left-0 min-w-[220px] rounded-xl mt-2 overflow-hidden",
           "transition-all duration-200 origin-top",
           isOpen
             ? "opacity-100 scale-y-100 pointer-events-auto"
             : "opacity-0 scale-y-95 pointer-events-none"
         )}
+        style={{
+          background: "linear-gradient(180deg, #4a7a0d 0%, #3d6a0a 100%)",
+          boxShadow: "0 20px 40px rgba(0,0,0,0.3), 0 4px 10px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.12)",
+          border: "1px solid rgba(255,255,255,0.1)",
+        }}
         role="menu"
       >
         <div className="py-2">
@@ -85,8 +91,8 @@ export default function DropdownMenu({ item, isActive }: DropdownMenuProps) {
               key={child.href}
               href={child.href}
               className={cn(
-                "block px-6 py-3 text-sm text-white/70 transition-colors",
-                "hover:text-orange hover:bg-white/5"
+                "block px-6 py-3 text-sm text-white/75 transition-all duration-200",
+                "hover:text-white hover:bg-white/10 hover:pl-7"
               )}
               role="menuitem"
               onClick={() => setIsOpen(false)}

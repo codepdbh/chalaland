@@ -6,13 +6,17 @@ import { siteConfig } from "@/data/site";
 
 export default function TopBar() {
   return (
-    <div className="bg-dark-soft text-white/75 text-xs border-b border-white/10">
+    <div className="relative text-white/90 text-xs" style={{
+      background: "linear-gradient(180deg, #5a8a10 0%, #4a7a0d 100%)",
+    }}>
+      {/* Top highlight line */}
+      <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/20" />
       <div className="mx-auto max-w-7xl px-4 flex items-center justify-between h-9">
         {/* Left: Contact */}
         <div className="flex items-center gap-4">
           <Link
             href={`mailto:${siteConfig.email}`}
-            className="flex items-center gap-1.5 hover:text-white transition-colors"
+            className="flex items-center gap-1.5 hover:text-white transition-colors drop-shadow-sm"
             aria-label="Enviar correo electrónico"
           >
             <Mail className="w-3.5 h-3.5" />
@@ -22,14 +26,14 @@ export default function TopBar() {
             href={`https://wa.me/${siteConfig.whatsapp}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 hover:text-white transition-colors"
+            className="flex items-center gap-1.5 hover:text-white transition-colors drop-shadow-sm"
           >
             <MessageCircle className="w-3.5 h-3.5" />
             <span className="hidden md:inline">WhatsApp</span>
           </Link>
           <Link
             href={`tel:${siteConfig.phone}`}
-            className="hidden items-center gap-1.5 hover:text-white transition-colors sm:flex"
+            className="hidden items-center gap-1.5 hover:text-white transition-colors sm:flex drop-shadow-sm"
           >
             <Phone className="w-3.5 h-3.5" />
             <span>{siteConfig.phone}</span>
@@ -38,7 +42,7 @@ export default function TopBar() {
 
         {/* Right: Social + Language */}
         <div className="flex items-center gap-4">
-          <span className="hidden text-white/55 md:inline">
+          <span className="hidden text-white/60 md:inline drop-shadow-sm">
             Cupos reducidos por salida
           </span>
           <Link
@@ -67,6 +71,8 @@ export default function TopBar() {
           </div>
         </div>
       </div>
+      {/* Bottom shadow line for depth */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/15" />
     </div>
   );
 }

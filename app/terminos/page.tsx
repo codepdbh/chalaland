@@ -20,7 +20,7 @@ export default function TerminosPage() {
       <section className="canopy-section px-4 py-14 md:py-18">
         <div className="prose prose-sm mx-auto max-w-3xl rounded-2xl border border-white bg-white p-6 shadow-sm md:p-8">
           <p className="mb-6 text-sm leading-relaxed text-gray-text">
-            <strong>Última actualización:</strong> Enero 2025
+            <strong>Última actualización:</strong> Mayo 2026
           </p>
 
           {[
@@ -30,7 +30,7 @@ export default function TerminosPage() {
             },
             {
               title: "2. Servicios",
-              text: "Ofrecemos servicios de ecoturismo comunitario en la Amazonía boliviana. Los paquetes, precios y disponibilidad están sujetos a cambios sin previo aviso. La confirmación de reserva está sujeta a disponibilidad.",
+              text: "Ofrecemos servicios de turismo comunitario para la ruta San Borja - Monte Rosa. Los paquetes, precios, comunidades anfitrionas y disponibilidad están sujetos a coordinación previa.",
             },
             {
               title: "3. Reservas y Pagos",
@@ -38,7 +38,7 @@ export default function TerminosPage() {
             },
             {
               title: "4. Política de Cancelación",
-              text: "Las políticas de cancelación varían según el paquete seleccionado. Consulte los detalles específicos en la página de cada paquete. En general, las cancelaciones con más de 15 días de anticipación no tienen cargo.",
+              text: "Las políticas de cancelación se confirman durante la coordinación de la reserva, ya que la ruta depende de logística local, clima, caminos rurales y navegación fluvial.",
             },
             {
               title: "5. Responsabilidad",
@@ -46,7 +46,7 @@ export default function TerminosPage() {
             },
             {
               title: "6. Propiedad Intelectual",
-              text: "Todo el contenido de este sitio web, incluyendo textos, imágenes, diseños y logotipos, es propiedad del albergue ecológico y está protegido por las leyes de propiedad intelectual.",
+              text: "Todo el contenido de este sitio web, incluyendo textos, imágenes, diseños y logotipos, pertenece a sus respectivos titulares y debe usarse respetando la identidad de CECASEM y sus comunidades.",
             },
           ].map((section) => (
             <div key={section.title}>
@@ -61,7 +61,7 @@ export default function TerminosPage() {
 
           <div className="mt-8 rounded-2xl bg-smoke p-4">
             <p className="text-xs italic text-gray-text">
-              Estos términos y condiciones son un texto placeholder. Deben ser revisados y adaptados por un profesional legal según la legislación aplicable en su jurisdicción.
+              Estos términos son una base informativa y deben revisarse con el equipo responsable de la operación turística antes de su publicación definitiva.
             </p>
           </div>
         </div>

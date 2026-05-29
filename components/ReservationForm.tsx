@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import Link from "next/link";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { reservationSchema, type ReservationFormData } from "@/lib/validations";
 import { packageOptions, roomOptions, peopleOptions } from "@/data/packages";
+import { getAgendaNoticeForDate } from "@/data/agenda";
 import { cn } from "@/lib/utils";
 import { Loader2, CheckCircle, AlertCircle } from "lucide-react";
 
@@ -17,10 +19,14 @@ export default function ReservationForm() {
     register,
     handleSubmit,
     reset,
+    control,
     formState: { errors },
   } = useForm<ReservationFormData>({
     resolver: zodResolver(reservationSchema),
   });
+
+  const selectedArrivalDate = useWatch({ control, name: "fechaLlegada" });
+  const agendaNotice = getAgendaNoticeForDate(selectedArrivalDate);
 
   const onSubmit = async (data: ReservationFormData) => {
     setStatus("loading");
@@ -52,6 +58,13 @@ export default function ReservationForm() {
     "w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-dark placeholder:text-gray-text/50 focus:border-orange focus:ring-2 focus:ring-orange/20 outline-none transition-colors shadow-sm";
   const labelClasses = "block text-sm font-semibold text-dark mb-1.5";
   const errorClasses = "text-red-500 text-xs mt-1";
+  const agendaNoticeClasses = {
+    available: "border-green-200 bg-green-50 text-green-700",
+    caution: "border-amber-200 bg-amber-50 text-amber-800",
+    "not-recommended": "border-red-200 bg-red-50 text-red-700",
+    "outside-window": "border-orange/30 bg-orange/10 text-orange",
+    "outside-year": "border-gray-200 bg-mist text-gray-text",
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
@@ -158,6 +171,37 @@ export default function ReservationForm() {
           {...register("fechaLlegada")}
         />
         {errors.fechaLlegada && <p className={errorClasses}>{errors.fechaLlegada.message}</p>}
+        {agendaNotice ? (
+          <div
+            className={cn(
+              "mt-3 flex gap-2 rounded-xl border p-3 text-xs leading-relaxed",
+              agendaNoticeClasses[agendaNotice.status]
+            )}
+          >
+            {agendaNotice.status === "available" ? (
+              <CheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0" />
+            ) : (
+              <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0" />
+            )}
+            <div>
+              <p className="font-semibold">{agendaNotice.title}</p>
+              <p className="mt-1">
+                {agendaNotice.message}{" "}
+                <Link href="/agenda" className="font-semibold underline underline-offset-2">
+                  Ver agenda
+                </Link>
+              </p>
+            </div>
+          </div>
+        ) : (
+          <p className="mt-2 text-xs text-gray-text">
+            Revisa la{" "}
+            <Link href="/agenda" className="font-semibold text-teal hover:underline">
+              Agenda 2027
+            </Link>{" "}
+            antes de elegir fecha.
+          </p>
+        )}
       </div>
 
       {/* Package Selection */}

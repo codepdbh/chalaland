@@ -11,20 +11,21 @@ export default function ImportantInfoSection() {
           href="/terminos"
           className="inline-block px-8 py-3 bg-orange text-white text-sm font-heading font-bold uppercase tracking-widest rounded-full hover:bg-orange-hover transition-colors mb-8"
         >
-          Información antes de viajar
+          Recomendaciones de ruta
         </Link>
 
         {/* Separator */}
         <div className="w-full h-px bg-dark-line/30 mb-10" />
 
         <p className="text-gray-text text-sm mb-8">
-          La experiencia se sostiene en tres compromisos visibles durante toda la estadía.
+          La ruta tiene dificultad moderada y combina caminos rurales, navegación fluvial,
+          caminatas internas y clima tropical variable.
         </p>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[
-            { icon: <ShieldCheck className="h-6 w-6" />, title: "Viaje responsable" },
-            { icon: <Users className="h-6 w-6" />, title: "Beneficio comunitario" },
-            { icon: <Leaf className="h-6 w-6" />, title: "Bosque protegido" },
+            { icon: <ShieldCheck className="h-6 w-6" />, title: "Agua y botiquín" },
+            { icon: <Users className="h-6 w-6" />, title: "Respeto comunitario" },
+            { icon: <Leaf className="h-6 w-6" />, title: "Bolsa para residuos" },
           ].map((item) => (
             <div
               key={item.title}
@@ -43,7 +44,7 @@ export default function ImportantInfoSection() {
         {/* Additional CTA */}
         <div className="mt-10">
           <CTAButton href="/contacto" variant="outline" size="sm">
-            Contáctanos para más información
+            Coordinar la visita
           </CTAButton>
         </div>
       </div>

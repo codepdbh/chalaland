@@ -4,18 +4,18 @@ import PageHero from "@/components/PageHero";
 import { getAssetPath } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Nuestra Comunidad",
+  title: "Ruta y Comunidades",
   description:
-    "Conoce a la comunidad indígena que hace posible nuestro proyecto de ecoturismo. Cultura, tradiciones y turismo comunitario.",
+    "Conoce las comunidades de la ruta San Borja - Monte Rosa: Galilea, San Antonio, Campo Bello y Monte Rosa.",
 };
 
 export default function ComunidadPage() {
   return (
     <>
       <PageHero
-        title="Nuestra Comunidad"
-        eyebrow="Guardianes de la selva"
-        subtitle="La experiencia turística existe porque la comunidad decidió proteger, gestionar y compartir su territorio."
+        title="Ruta y Comunidades"
+        eyebrow="Galilea, San Antonio, Campo Bello y Monte Rosa"
+        subtitle="La ruta turística comunitaria conecta espacios productivos, artesanales, culturales y de hospedaje en territorio tsimane."
         image="/assets/gallery/community-3.jpg"
       />
 
@@ -25,14 +25,13 @@ export default function ComunidadPage() {
           {/* Intro */}
           <div className="mb-12">
             <p className="text-gray-text text-base leading-relaxed mb-4">
-              Nuestra comunidad indígena ha habitado estas tierras durante generaciones, desarrollando un profundo
-              conocimiento del bosque amazónico y sus recursos. El proyecto de ecoturismo fue concebido y es
-              gestionado por la propia comunidad, que participa activamente en todas las decisiones y se beneficia
-              directamente de la actividad turística.
+              El recorrido inicia en San Borja y se desarrolla en diferentes tramos hasta Monte Rosa,
+              donde se encuentran las cabañas principales de hospedaje. Durante el trayecto se realizan
+              caminatas internas comunitarias, navegación fluvial y actividades de interacción local.
             </p>
             <p className="text-gray-text text-base leading-relaxed">
-              Los ingresos del turismo se destinan a educación, salud, infraestructura comunitaria y programas
-              de conservación, creando un círculo virtuoso que protege tanto a la gente como a la naturaleza.
+              El objetivo de la ruta es fortalecer el turismo comunitario solidario, preservando los recursos
+              naturales y culturales y generando beneficios sostenibles para las comunidades anfitrionas.
             </p>
           </div>
 
@@ -47,48 +46,41 @@ export default function ComunidadPage() {
           <div className="space-y-10">
             <div>
               <h2 className="font-heading font-bold text-orange text-xl mb-3">
-                Cultura y Tradiciones
+                Galilea - Artegal
               </h2>
               <p className="text-gray-text text-sm leading-relaxed">
-                La comunidad mantiene vivas sus tradiciones ancestrales, incluyendo danzas ceremoniales,
-                artesanías elaboradas con materiales del bosque, y una rica tradición oral que transmite
-                la historia y los conocimientos de generación en generación. Los visitantes tienen la
-                oportunidad de participar en talleres y presentaciones que celebran esta herencia cultural.
+                Galilea funciona como punto de ingreso a la ruta y se vincula con Artegal, donde se
+                desarrollan actividades artesanales y de bienvenida antes de continuar hacia San Antonio.
               </p>
             </div>
 
             <div>
               <h2 className="font-heading font-bold text-orange text-xl mb-3">
-                Turismo Comunitario
+                San Antonio
               </h2>
               <p className="text-gray-text text-sm leading-relaxed">
-                Nuestro modelo de turismo comunitario es un ejemplo reconocido internacionalmente. La comunidad
-                es propietaria y gestora del albergue, los guías son miembros capacitados de la comunidad, y los
-                beneficios económicos se distribuyen equitativamente. Este modelo ha demostrado que el turismo
-                puede ser una herramienta poderosa para la conservación y el desarrollo sostenible.
+                San Antonio conserva prácticas tradicionales tsimanes y recibe a visitantes con comida típica,
+                danza, relatos culturales, tejidos, fogatas y espacios de convivencia comunitaria.
               </p>
             </div>
 
             <div>
               <h2 className="font-heading font-bold text-orange text-xl mb-3">
-                Conservación
+                Campo Bello
               </h2>
               <p className="text-gray-text text-sm leading-relaxed">
-                La comunidad lidera programas activos de conservación que incluyen monitoreo de biodiversidad,
-                control de acceso al territorio, reforestación de áreas degradadas y educación ambiental.
-                Gracias al turismo, el bosque tiene un valor económico vivo que incentiva su protección.
+                Campo Bello integra eco-cabañas, pesca artesanal, demostraciones de tejidos y cestería,
+                gastronomía local y conexión hacia Puerto Belén y el tramo fluvial de la ruta.
               </p>
             </div>
 
             <div>
               <h2 className="font-heading font-bold text-orange text-xl mb-3">
-                Educación y Desarrollo
+                Monte Rosa
               </h2>
               <p className="text-gray-text text-sm leading-relaxed">
-                Los ingresos del ecoturismo financian becas educativas, capacitación profesional, mejoras
-                en infraestructura comunitaria y programas de salud. Los jóvenes de la comunidad tienen
-                la oportunidad de formarse como guías naturalistas bilingües, combinando sus conocimientos
-                tradicionales con formación científica moderna.
+                Monte Rosa es el punto de llegada por canoa desde Campo Bello. Allí se realizan actividades
+                de arquería, elaboración de arcos y flechas, cantos tradicionales y descanso en cabañas.
               </p>
             </div>
           </div>
@@ -108,8 +100,8 @@ export default function ComunidadPage() {
 
           {/* CTA */}
           <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <CTAButton href="/sobre-nosotros/historia" variant="outline">
-              Nuestra Historia
+            <CTAButton href="/sobre-nosotros/sobre" variant="outline">
+              Sobre el Proyecto
             </CTAButton>
             <CTAButton href="/paquetes" variant="secondary">
               Conocer Paquetes

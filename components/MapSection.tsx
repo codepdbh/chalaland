@@ -8,24 +8,24 @@ export default function MapSection() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <SectionTitle
-            title="Nuestra Ubicación"
-            subtitle="El viaje comienza en Rurrenabaque y se adentra lentamente hacia el bosque, el río y el lago."
+            title="Ubicación de la ruta"
+            subtitle="El recorrido parte de San Borja y avanza por Galilea, San Antonio y Campo Bello antes del tramo fluvial hacia Monte Rosa."
             align="left"
             className="mb-7"
           />
           <div className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
             <p className="text-sm font-semibold uppercase tracking-wide text-orange">
-              Punto de encuentro
+              Punto de coordinación
             </p>
             <p className="mt-2 text-lg font-heading font-bold text-dark">
               {contactInfo.address}
             </p>
             <p className="mt-3 text-sm leading-relaxed text-gray-text">
-              Coordinamos horarios, transporte fluvial y recomendaciones de llegada antes de confirmar cada reserva.
+              La distancia total de ida y vuelta indicada en la ficha es de 58,16 km, combinando movilidad terrestre, canoa y recorridos internos por comunidad.
             </p>
             <div className="mt-5">
               <CTAButton href="/contacto" variant="secondary" size="sm">
-                Coordinar llegada
+                Coordinar ruta
               </CTAButton>
             </div>
           </div>
@@ -41,7 +41,7 @@ export default function MapSection() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Ubicación del albergue ecológico"
+            title="Ubicación de la ruta turística comunitaria"
           />
         </div>
       </div>

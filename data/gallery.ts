@@ -23,7 +23,7 @@ export const galleryCategories: { value: GalleryCategory; label: string }[] = [
   { value: "paisajes", label: "Paisajes y Excursiones" },
   { value: "fauna", label: "Fauna" },
   { value: "flora", label: "Flora" },
-  { value: "albergue", label: "El Albergue" },
+  { value: "albergue", label: "Eco-cabañas" },
   { value: "comunidad", label: "Comunidad" },
 ];
 
@@ -50,10 +50,10 @@ export const galleryImages: GalleryImage[] = [
   { id: 17, src: "/assets/gallery/flora-5.jpg", alt: "Bromelias en las ramas altas", category: "flora" },
   { id: 18, src: "/assets/gallery/flora-6.jpg", alt: "Hongos tropicales luminiscentes", category: "flora" },
   // Albergue
-  { id: 19, src: "/assets/gallery/lodge-1.jpg", alt: "Vista exterior del albergue", category: "albergue" },
+  { id: 19, src: "/assets/gallery/lodge-1.jpg", alt: "Vista exterior de eco-cabañas", category: "albergue" },
   { id: 20, src: "/assets/gallery/lodge-2.jpg", alt: "Interior de cabaña doble", category: "albergue" },
   { id: 21, src: "/assets/gallery/lodge-3.jpg", alt: "Comedor principal con vista al bosque", category: "albergue" },
-  { id: 22, src: "/assets/gallery/lodge-4.jpg", alt: "Terraza del albergue al atardecer", category: "albergue" },
+  { id: 22, src: "/assets/gallery/lodge-4.jpg", alt: "Terraza de eco-cabañas al atardecer", category: "albergue" },
   { id: 23, src: "/assets/gallery/lodge-5.jpg", alt: "Hamacas en el área de descanso", category: "albergue" },
   { id: 24, src: "/assets/gallery/lodge-6.jpg", alt: "Muelle del albergue en el lago", category: "albergue" },
   // Comunidad

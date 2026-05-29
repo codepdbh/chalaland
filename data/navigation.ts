@@ -19,9 +19,9 @@ export const mainNavigation: NavItem[] = [
     href: "/sobre-nosotros/sobre",
     children: [
       { label: "Sobre el Proyecto", href: "/sobre-nosotros/sobre" },
+      { label: "Ruta y Comunidades", href: "/sobre-nosotros/comunidad" },
+      { label: "Eco-cabañas", href: "/sobre-nosotros/instalaciones" },
       { label: "Nuestra Historia", href: "/sobre-nosotros/historia" },
-      { label: "Nuestras Instalaciones", href: "/sobre-nosotros/instalaciones" },
-      { label: "Nuestra Comunidad", href: "/sobre-nosotros/comunidad" },
     ],
   },
   {
@@ -29,13 +29,16 @@ export const mainNavigation: NavItem[] = [
     href: "/paquetes",
     children: [
       { label: "Paquete Jochi", href: "/paquetes/jochi" },
-      { label: "Paquete Pecarí", href: "/paquetes/pecari" },
-      { label: "Paquete Capibara", href: "/paquetes/capibara" },
-      { label: "Paquete Anta", href: "/paquetes/anta" },
-      { label: "Paquetes a Medida", href: "/paquetes#medida" },
-      { label: "Lo Mejor de la Región", href: "/paquetes#region" },
-      { label: "Tour Especial para Nacionales", href: "/paquetes#nacionales" },
+      { label: "Paquete Paraba Azul", href: "/paquetes/paraba-azul" },
+      { label: "Paquete Peta", href: "/paquetes/peta" },
+      { label: "Paquete Perezoso", href: "/paquetes/perezoso" },
+      { label: "Ruta por comunidades", href: "/paquetes#ruta" },
+      { label: "Recomendaciones", href: "/paquetes#recomendaciones" },
     ],
+  },
+  {
+    label: "Agenda",
+    href: "/agenda",
   },
   {
     label: "Galería",
@@ -44,10 +47,6 @@ export const mainNavigation: NavItem[] = [
       { label: "Fotos", href: "/galeria/fotos" },
       { label: "Videos", href: "/galeria/videos" },
     ],
-  },
-  {
-    label: "Blog",
-    href: "/blog",
   },
   {
     label: "Contáctanos",

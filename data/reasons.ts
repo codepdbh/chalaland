@@ -12,44 +12,38 @@ export interface Reason {
 export const reasons: Reason[] = [
   {
     icon: "MapPin",
-    title: "Ubicación Privilegiada",
+    title: "Ruta San Borja - Monte Rosa",
     description:
-      "Ubicado en el corazón de un parque nacional, rodeado de la biodiversidad más rica del continente.",
+      "Recorrido comunitario por Galilea, San Antonio, Campo Bello y Monte Rosa, combinando transporte terrestre, canoa y caminatas locales.",
   },
   {
     icon: "Leaf",
-    title: "Turismo Responsable",
+    title: "Turismo Comunitario Solidario",
     description:
-      "Modelo de turismo sostenible y comunitario reconocido internacionalmente.",
+      "Una propuesta que integra conservación ambiental, beneficio social y revalorización de recursos naturales y culturales.",
   },
   {
     icon: "Languages",
-    title: "Guías Bilingües",
+    title: "Guía Nativo",
     description:
-      "Guías naturalistas bilingües intérpretes del bosque amazónico e historia natural.",
+      "Acompañamiento local para interpretar senderos, ríos, historia comunitaria, gastronomía y saberes tradicionales.",
   },
   {
     icon: "Footprints",
-    title: "Senderos de Interpretación",
+    title: "Recorridos Internos",
     description:
-      "Más de 50 kilómetros de senderos cuidadosamente trazados para la exploración.",
+      "Caminatas comunitarias de dificultad media, con recorridos aproximados de 3 horas de ida y 3 horas de vuelta.",
   },
   {
     icon: "Award",
-    title: "Premios Internacionales",
+    title: "Comunidades Tsimanes",
     description:
-      "Ganadores de múltiples premios internacionales de turismo sostenible.",
+      "Convivencia con San Antonio, Campo Bello y Monte Rosa, donde se encuentran espacios de hospedaje y cultura local.",
   },
   {
     icon: "Clock",
-    title: "Más Tiempo en la Naturaleza",
+    title: "Experiencias por Duración",
     description:
-      "Itinerarios diseñados para maximizar el tiempo explorando el parque nacional.",
-  },
-  {
-    icon: "Waves",
-    title: "Lago Espectacular",
-    description:
-      "Un lago cristalino considerado uno de los lugares más hermosos de la región.",
+      "Paquetes de 2 a 5 días para elegir entre visita a una comunidad, recorrido ampliado, experiencia integral o ruta extendida.",
   },
 ];

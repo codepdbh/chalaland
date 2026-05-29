@@ -33,7 +33,7 @@ export default function TestimonialSection() {
     <section
       className="relative overflow-hidden bg-dark py-16 md:py-24 px-4"
       style={{
-        backgroundImage: `linear-gradient(90deg, rgba(23,34,33,.92), rgba(23,34,33,.72)), url(${getAssetPath("/assets/gallery/community-1.jpg")})`,
+        backgroundImage: `linear-gradient(90deg, rgba(30,41,59,.94), rgba(30,41,59,.78)), url(${getAssetPath("/assets/gallery/community-1.jpg")})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

@@ -45,7 +45,7 @@ export default function PageHero({
       >
         <div
           className={cn(
-            "max-w-3xl",
+            "w-full max-w-3xl min-w-0",
             align === "center" && "mx-auto text-center"
           )}
         >
@@ -60,13 +60,13 @@ export default function PageHero({
               {eyebrow}
             </span>
           )}
-          <h1 className="mt-5 text-3xl font-bold uppercase text-white sm:text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="mt-5 max-w-full break-words text-2xl font-bold uppercase text-white sm:text-4xl md:text-5xl lg:text-6xl">
             {title}
           </h1>
           {subtitle && (
             <p
               className={cn(
-                "mt-4 text-base leading-relaxed text-white/80 sm:text-lg",
+                "mt-4 max-w-full break-words text-sm leading-relaxed text-white/80 sm:text-lg",
                 align === "center" && "mx-auto max-w-2xl"
               )}
             >

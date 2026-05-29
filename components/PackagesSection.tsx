@@ -8,8 +8,8 @@ export default function PackagesSection() {
     <section className="canopy-section py-16 md:py-24 px-4">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
-          title="Nuestros Paquetes"
-          subtitle="Cada itinerario tiene su propio ritmo: una entrada breve a la selva, una inmersión profunda o una expedición completa por lago, bosque y comunidad."
+          title="Paquetes de la ruta"
+          subtitle="Elige entre Jochi, Paraba Azul, Peta y Perezoso: experiencias de 2 a 5 días por comunidades, ríos, senderos y eco-cabañas."
         />
 
         {/* Package Grid */}
@@ -29,11 +29,11 @@ export default function PackagesSection() {
 
         {/* Bottom CTA */}
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <CTAButton href="/paquetes#medida" variant="outline">
-            Paquetes a Medida
+          <CTAButton href="/paquetes#ruta" variant="outline">
+            Ver datos de ruta
           </CTAButton>
           <CTAButton href="/reservas" variant="secondary">
-            Reservar Ahora
+            Consultar disponibilidad
           </CTAButton>
         </div>
       </div>

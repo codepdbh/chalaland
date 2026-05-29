@@ -20,7 +20,7 @@ export default function PoliticaPrivacidadPage() {
       <section className="canopy-section px-4 py-14 md:py-18">
         <div className="prose prose-sm mx-auto max-w-3xl rounded-2xl border border-white bg-white p-6 shadow-sm md:p-8">
           <p className="mb-6 text-sm leading-relaxed text-gray-text">
-            <strong>Última actualización:</strong> Enero 2025
+            <strong>Última actualización:</strong> Mayo 2026
           </p>
 
           {[
@@ -30,7 +30,7 @@ export default function PoliticaPrivacidadPage() {
             },
             {
               title: "2. Uso de la Información",
-              text: "Utilizamos su información personal exclusivamente para procesar solicitudes de reserva, responder consultas, enviar información solicitada sobre nuestros servicios y mejorar la experiencia del usuario en nuestro sitio web.",
+              text: "Utilizamos su información personal exclusivamente para procesar solicitudes de reserva, responder consultas, enviar información sobre la ruta turística comunitaria y coordinar logística de viaje.",
             },
             {
               title: "3. Cookies",
@@ -61,7 +61,7 @@ export default function PoliticaPrivacidadPage() {
 
           <div className="mt-8 rounded-2xl bg-smoke p-4">
             <p className="text-xs italic text-gray-text">
-              Esta política de privacidad es un texto placeholder. Debe ser revisada y adaptada por un profesional legal según la legislación aplicable en su jurisdicción.
+              Esta política de privacidad es una base informativa y debe ser revisada por el equipo responsable antes de su publicación definitiva.
             </p>
           </div>
         </div>

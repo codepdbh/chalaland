@@ -4,7 +4,6 @@ import SectionTitle from "@/components/SectionTitle";
 import ReasonsSection from "@/components/ReasonsSection";
 import AwardsCarousel from "@/components/AwardsCarousel";
 import PackagesSection from "@/components/PackagesSection";
-import TestimonialSection from "@/components/TestimonialSection";
 import ImportantInfoSection from "@/components/ImportantInfoSection";
 import MapSection from "@/components/MapSection";
 import { siteConfig } from "@/data/site";
@@ -16,15 +15,15 @@ export default function HomePage() {
     <>
       {/* Hero Section */}
       <Hero
-        kicker="Ecolodge comunitario en la Amazonía boliviana"
-        title="Turismo Solidario se vive lento, profundo y con la selva alrededor"
-        subtitle="Paquetes diseñados con guías locales, navegación por el lago, senderos de interpretación y encuentros culturales que sostienen a la comunidad."
+        kicker="Ruta turística comunitaria en San Borja, Beni"
+        title="Eco-cabañas CECASEM: de San Borja a Monte Rosa"
+        subtitle="Una ruta comunitaria por Galilea, San Antonio, Campo Bello y Monte Rosa, con transporte terrestre, navegación en canoa, caminatas locales y convivencia cultural."
         primaryCta={{ href: "/reservas", label: "Consultar disponibilidad" }}
-        secondaryCta={{ href: "/paquetes", label: "Explorar paquetes" }}
+        secondaryCta={{ href: "/paquetes", label: "Ver paquetes" }}
         stats={[
-          { value: "3-6", label: "días de inmersión" },
-          { value: "50 km", label: "senderos interpretativos" },
-          { value: "100%", label: "gestión comunitaria" },
+          { value: "58,16 km", label: "distancia total ida y vuelta" },
+          { value: "4", label: "comunidades de la ruta" },
+          { value: "Moderada", label: "dificultad técnica general" },
         ]}
         backgroundImage="/assets/hero/hero-placeholder.jpg"
         backgroundVideo="/assets/hero/hero-video.mp4"
@@ -39,8 +38,8 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
           <div>
             <SectionTitle
-              title="Naturaleza y cultura en estado vivo"
-              subtitle="Una experiencia pensada para mirar con calma: amaneceres sobre el agua, caminatas bajo dosel, sabores locales y relatos que pertenecen al territorio."
+              title="Ruta turística comunitaria"
+              subtitle="El proyecto busca fortalecer el turismo comunitario solidario, proteger el entorno natural y revalorizar los recursos culturales de las comunidades tsimanes."
               variant="white"
               align="left"
               className="mb-8"
@@ -50,17 +49,17 @@ export default function HomePage() {
                 {
                   icon: <Leaf className="h-5 w-5" />,
                   title: "Conservación",
-                  text: "El bosque vale más vivo y protegido.",
+                  text: "El entorno natural se preserva como base del desarrollo local.",
                 },
                 {
                   icon: <Users className="h-5 w-5" />,
-                  title: "Comunidad",
-                  text: "La operación nace y vuelve a la comunidad.",
+                  title: "Comunidades",
+                  text: "Galilea, San Antonio, Campo Bello y Monte Rosa articulan la ruta.",
                 },
                 {
                   icon: <Binoculars className="h-5 w-5" />,
-                  title: "Avistamiento",
-                  text: "Rutas para fauna, aves, flora y lago.",
+                  title: "Recorridos",
+                  text: "Caminatas, canoa, artesanías, cacao, pesca y gastronomía local.",
                 },
               ].map((item) => (
                 <div
@@ -118,9 +117,6 @@ export default function HomePage() {
 
       {/* Packages Section */}
       <PackagesSection />
-
-      {/* Testimonials */}
-      <TestimonialSection />
 
       {/* Important Info */}
       <ImportantInfoSection />

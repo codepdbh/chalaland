@@ -20,7 +20,7 @@ export default function PackageDetail({ pkg }: PackageDetailProps) {
       <PageHero
         title={pkg.title}
         subtitle={pkg.shortDescription}
-        eyebrow="Paquete amazónico"
+        eyebrow="Ruta turística comunitaria"
         image={pkg.image}
         align="left"
       >
@@ -58,9 +58,9 @@ export default function PackageDetail({ pkg }: PackageDetailProps) {
           <SectionTitle title="Precios" align="left" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <PriceTable
-              title="Tour Regular"
+              title="Valor del paquete"
               prices={pkg.regularPrice}
-              note="1 PAX = 1 persona. Precios en USD."
+              note="Tarifa por persona según la ficha del PDF. Confirmar disponibilidad antes de reservar."
             />
             {pkg.sharedPrice && (
               <PriceTable
@@ -72,15 +72,16 @@ export default function PackageDetail({ pkg }: PackageDetailProps) {
           </div>
         </div>
 
-        {/* Special promotion */}
+        {/* Route context */}
         <div className="mb-14 rounded-2xl border border-teal/30 bg-teal/10 p-6">
           <h3 className="font-heading font-bold text-teal text-lg mb-2">
-            ¿Eres de Bolivia?
+            Ruta San Borja - Monte Rosa
           </h3>
           <p className="text-sm text-gray-text">
-            Contamos con tarifas especiales para nacionales bolivianos. 
+            El recorrido combina tramos terrestres, navegación en canoa y caminatas comunitarias
+            por Galilea, San Antonio, Campo Bello y Monte Rosa.
             <Link href="/contacto" className="text-teal hover:underline ml-1">
-              Contáctanos para más información
+              Coordina la logística antes de viajar
             </Link>.
           </p>
         </div>

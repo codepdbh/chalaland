@@ -6,7 +6,7 @@ import PageHero from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Galería de Fotos",
   description:
-    "Explora nuestra galería fotográfica: paisajes amazónicos, fauna silvestre, flora, el albergue y la comunidad.",
+    "Explora la galería fotográfica de la ruta CECASEM: paisajes, eco-cabañas y comunidad.",
 };
 
 export default function FotosPage() {
@@ -15,7 +15,7 @@ export default function FotosPage() {
       <PageHero
         title="Galería de Fotos"
         eyebrow="Postales vivas"
-        subtitle="Paisajes, fauna, flora, comunidad y rincones del albergue para imaginar el viaje antes de llegar."
+        subtitle="Paisajes, comunidad y rincones de las eco-cabañas para imaginar la ruta antes de llegar."
         image="/assets/gallery/landscape-5.jpg"
       />
 

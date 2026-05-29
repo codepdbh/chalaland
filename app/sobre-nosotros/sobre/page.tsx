@@ -6,7 +6,7 @@ import PageHero from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Sobre Nosotros",
   description:
-    "Conoce nuestro albergue ecológico comunitario en la Amazonía boliviana. Misión, visión, ubicación y actividades.",
+    "Conoce la ruta turística comunitaria Eco-cabañas CECASEM entre San Borja y Monte Rosa.",
 };
 
 export default function SobrePage() {
@@ -15,7 +15,7 @@ export default function SobrePage() {
       <PageHero
         title="Sobre Nosotros"
         eyebrow="Proyecto comunitario"
-        subtitle="Un albergue nacido para proteger territorio, compartir conocimiento local y hacer del turismo una herramienta de conservación."
+        subtitle="Una propuesta de turismo comunitario solidario para fortalecer la economía local, conservar el entorno natural y revalorizar la cultura tsimane."
         image="/assets/gallery/community-1.jpg"
       />
 
@@ -25,14 +25,14 @@ export default function SobrePage() {
           {/* Intro */}
           <div className="prose max-w-none mb-14">
             <p className="text-gray-text text-base leading-relaxed mb-6">
-              Nuestro albergue ecológico nació del sueño de una comunidad indígena que decidió proteger su territorio
-              y compartirlo con el mundo de manera sostenible. Ubicado en el corazón de un parque nacional, somos un
-              modelo de turismo responsable que combina la conservación ambiental con el desarrollo comunitario.
+              La ruta turística comunitaria Eco-cabañas CECASEM se desarrolla en coordinación con comunidades
+              indígenas Tsimanes del departamento del Beni, conectando San Borja con Galilea, San Antonio,
+              Campo Bello y Monte Rosa mediante caminos rurales, navegación fluvial y recorridos internos.
             </p>
             <p className="text-gray-text text-base leading-relaxed">
-              Desde nuestra fundación, hemos recibido visitantes de más de 50 países, todos buscando una conexión
-              auténtica con la naturaleza y la cultura amazónica. Nuestros guías son miembros de la comunidad local,
-              formados como naturalistas bilingües, que comparten su profundo conocimiento del bosque y sus tradiciones.
+              El proyecto busca implementar turismo comunitario solidario considerando la conservación del
+              entorno natural, el fortalecimiento socioeconómico de las comunidades y la revalorización de
+              sus recursos naturales y culturales.
             </p>
           </div>
 
@@ -41,49 +41,47 @@ export default function SobrePage() {
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
               <h3 className="font-heading font-bold text-orange text-lg mb-3">Nuestra Misión</h3>
               <p className="text-sm text-gray-text leading-relaxed">
-                Promover el ecoturismo comunitario como herramienta de conservación y desarrollo sostenible,
-                ofreciendo experiencias auténticas que conecten a nuestros visitantes con la naturaleza y la
-                cultura amazónica, mientras generamos beneficios directos para nuestra comunidad.
+                Desarrollar una ruta turística viable y beneficiosa para las comunidades, con hospedaje,
+                alimentación, actividades guiadas, transporte por río y experiencias culturales auténticas.
               </p>
             </div>
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
               <h3 className="font-heading font-bold text-teal text-lg mb-3">Nuestra Visión</h3>
               <p className="text-sm text-gray-text leading-relaxed">
-                Ser el referente mundial de turismo comunitario sostenible en la Amazonía, demostrando que la
-                conservación y el desarrollo pueden ir de la mano, inspirando a otras comunidades a proteger
-                sus territorios y compartir su patrimonio natural y cultural con el mundo.
+                Consolidar un modelo local de turismo solidario que genere beneficios sostenibles,
+                preserve el entorno amazónico y fortalezca la organización comunitaria a largo plazo.
               </p>
             </div>
           </div>
 
           {/* Activities */}
-          <SectionTitle title="Nuestras Actividades" subtitle="Experiencias únicas en la selva amazónica" />
+          <SectionTitle title="Actividades de la ruta" subtitle="Experiencias comunitarias, productivas y naturales descritas en la ficha del proyecto" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-14">
             {[
               {
-                title: "Paseos por el Bosque",
-                desc: "Caminatas guiadas por senderos de interpretación con observación de flora y fauna silvestre.",
+                title: "Caminatas Comunitarias",
+                desc: "Recorridos internos de dificultad media por senderos naturales y espacios de interacción comunitaria.",
               },
               {
                 title: "Navegación en Canoa",
-                desc: "Paseos por el lago cristalino al amanecer y atardecer para observar aves y caimanes.",
+                desc: "Tramo fluvial desde Campo Bello hacia Monte Rosa y navegación por sectores ribereños.",
               },
               {
-                title: "Miradores Panorámicos",
-                desc: "Ascenso a torres y miradores con vistas impresionantes del dosel del bosque.",
+                title: "Ruta del Cacao",
+                desc: "Visita a Pinar del Río y ASPECABO para conocer el proceso tradicional del cacao amazónico.",
               },
               {
                 title: "Gastronomía Local",
-                desc: "Comida preparada con ingredientes frescos y recetas tradicionales de la comunidad.",
+                desc: "Comidas típicas, pescado local, frutas de temporada, bebidas tradicionales y almuerzos comunitarios.",
               },
               {
-                title: "Observación de Aves",
-                desc: "Más de 350 especies registradas. Guías especializados en avifauna amazónica.",
+                title: "Artesanías y Tejidos",
+                desc: "Demostraciones de tejidos, cestería, productos artesanales y técnicas tradicionales.",
               },
               {
-                title: "Experiencia Cultural",
-                desc: "Visita a la comunidad, talleres de artesanías y presentaciones de danzas tradicionales.",
+                title: "Fogata y Cultura",
+                desc: "Danza tradicional, cantos originarios, relatos locales y convivencia con comunidades Tsimanes.",
               },
             ].map((activity, i) => (
               <div key={i} className="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
@@ -96,7 +94,7 @@ export default function SobrePage() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <CTAButton href="/sobre-nosotros/instalaciones" variant="primary">
-              Ver Instalaciones
+              Ver Eco-cabañas
             </CTAButton>
             <CTAButton href="/sobre-nosotros/comunidad" variant="outline">
               Nuestra Comunidad

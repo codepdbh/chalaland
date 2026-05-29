@@ -27,13 +27,15 @@ export default function ReasonsSection() {
           {reasons.map((reason, index) => (
             <div
               key={index}
-              className={`group rounded-2xl border border-gray-100 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+              className={`group rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
                 index === 0 || index === 3
-                  ? "dark-card text-white lg:col-span-3"
-                  : "bg-smoke text-dark lg:col-span-2"
+                  ? "bg-dark-light text-white lg:col-span-3 border border-dark-line/50 shadow-lg"
+                  : "bg-white text-dark lg:col-span-2 border border-gray-100 shadow-sm"
               }`}
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange/10 transition-transform duration-300 group-hover:scale-110">
+              <div className={`flex h-12 w-12 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110 ${
+                index === 0 || index === 3 ? "bg-orange/20" : "bg-orange/10"
+              }`}>
                 {iconMap[reason.icon] || <Award className="w-7 h-7 text-orange" />}
               </div>
               <h3 className="mt-5 font-heading text-lg font-bold">

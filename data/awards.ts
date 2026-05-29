@@ -13,31 +13,31 @@ export interface Award {
 export const awards: Award[] = [
   {
     id: 1,
-    title: "Premio de Turismo Sostenible",
+    title: "CECASEM",
     image: "/assets/awards/award-1.svg",
     url: "#",
   },
   {
     id: 2,
-    title: "Certificación Ecológica",
+    title: "Agencia Asturiana de Cooperación al Desarrollo",
     image: "/assets/awards/award-2.svg",
     url: "#",
   },
   {
     id: 3,
-    title: "Reconocimiento Comunitario",
+    title: "Fundation Félix et Éliane Genève",
     image: "/assets/awards/award-3.svg",
     url: "#",
   },
   {
     id: 4,
-    title: "Premio Responsabilidad Ambiental",
+    title: "Anteproyecto Turismo Comunitario",
     image: "/assets/awards/award-4.svg",
     url: "#",
   },
   {
     id: 5,
-    title: "Excelencia en Ecoturismo",
+    title: "Eco-cabañas Comunidad Hima",
     image: "/assets/awards/award-5.svg",
     url: "#",
   },

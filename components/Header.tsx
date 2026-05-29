@@ -19,8 +19,8 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-shadow duration-300",
-        scrolled && "shadow-lg shadow-black/30"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled && "shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
       )}
     >
       <TopBar />

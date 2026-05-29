@@ -31,8 +31,8 @@ export default function AwardsCarousel() {
     <section className="bg-dark py-16 md:py-20 px-4 text-white">
       <div className="mx-auto max-w-6xl">
         <SectionTitle
-          title="Reconocimientos"
-          subtitle="Una forma de viajar respaldada por conservación, organización comunitaria y hospitalidad local."
+          title="Aliados del proyecto"
+          subtitle="Instituciones y organizaciones que aparecen en la propuesta de ruta turística comunitaria."
           variant="white"
         />
 

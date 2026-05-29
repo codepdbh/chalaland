@@ -9,7 +9,7 @@ import PageHero from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Contacto",
   description:
-    "Contáctanos para consultas, cotizaciones o información sobre nuestros paquetes turísticos en la Amazonía.",
+    "Contáctanos para consultas, cotizaciones o información sobre la ruta turística comunitaria Eco-cabañas CECASEM.",
 };
 
 export default function ContactoPage() {
@@ -17,8 +17,8 @@ export default function ContactoPage() {
     <>
       <PageHero
         title="Contacto"
-        eyebrow="Planifica tu viaje"
-        subtitle="Cuéntanos fechas, intereses y número de viajeros. Te ayudamos a elegir el paquete con mejor ritmo para tu visita."
+        eyebrow="Planifica tu ruta"
+        subtitle="Cuéntanos fechas, intereses y número de viajeros. Te ayudamos a elegir entre Jochi, Paraba Azul, Peta o Perezoso."
         image="/assets/gallery/lodge-4.jpg"
       />
 
@@ -95,7 +95,7 @@ export default function ContactoPage() {
 
               {/* WhatsApp CTA */}
               <Link
-                href={`https://wa.me/${siteConfig.whatsapp}?text=Hola, me interesa obtener información sobre sus paquetes turísticos.`}
+                href={`https://wa.me/${siteConfig.whatsapp}?text=Hola, me interesa obtener información sobre la ruta turística comunitaria CECASEM.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white text-sm font-semibold rounded-full hover:bg-green-700 transition-colors"

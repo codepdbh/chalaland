@@ -6,7 +6,7 @@ import PageHero from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Galería de Videos",
   description:
-    "Mira nuestros videos del albergue, la vida silvestre y la comunidad en la Amazonía boliviana.",
+    "Mira videos de la ruta comunitaria, eco-cabañas y comunidades de CECASEM.",
 };
 
 export default function VideosPage() {

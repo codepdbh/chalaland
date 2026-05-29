@@ -6,18 +6,18 @@ import CTAButton from "@/components/CTAButton";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Nuestros Paquetes",
+  title: "Paquetes de la Ruta",
   description:
-    "Descubre nuestros paquetes turísticos para explorar la Amazonía. Desde 3 hasta 6 días de aventura, naturaleza y cultura.",
+    "Paquetes Jochi, Paraba Azul, Peta y Perezoso para la ruta turística comunitaria San Borja - Monte Rosa.",
 };
 
 export default function PaquetesPage() {
   return (
     <>
       <PageHero
-        title="Nuestros Paquetes"
-        eyebrow="Ritmos de viaje"
-        subtitle="Elige una experiencia según tu tiempo, energía y ganas de internarte en la selva."
+        title="Paquetes de la Ruta"
+        eyebrow="San Borja - Monte Rosa"
+        subtitle="Elige tu paquete comunitario."
         image="/assets/gallery/landscape-2.jpg"
       />
 
@@ -38,50 +38,77 @@ export default function PaquetesPage() {
             ))}
           </div>
 
-          {/* Custom Packages Section */}
-          <div id="medida" className="mt-16 text-center scroll-mt-40">
+          {/* Route Data */}
+          <div id="ruta" className="mt-16 scroll-mt-40">
             <SectionTitle
-              title="Paquetes a Medida"
-              subtitle="¿Necesitas algo diferente? Diseñamos tu aventura personalizada"
+              title="Datos de la Ruta"
+              subtitle="La ficha técnica describe una ruta moderada con tramos terrestres, navegación fluvial y recorridos internos por comunidad."
             />
-            <p className="text-gray-text text-sm max-w-2xl mx-auto mb-6">
-              Si ninguno de nuestros paquetes estándar se ajusta a tus necesidades, podemos crear
-              un itinerario personalizado según tu tiempo, intereses y presupuesto. Contáctanos
-              para diseñar juntos tu experiencia ideal en la Amazonía.
-            </p>
-            <CTAButton href="/contacto" variant="secondary">
-              Solicitar Paquete Personalizado
-            </CTAButton>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                { label: "Distancia total", value: "58,16 km", detail: "29,08 km x 2" },
+                { label: "Dificultad", value: "Moderada", detail: "3 de 5 según ficha" },
+                { label: "Recorridos internos", value: "3 h + 3 h", detail: "ida y vuelta por comunidad" },
+                { label: "Tramo fluvial", value: "7,29 km", detail: "Campo Bello - Monte Rosa" },
+              ].map((item) => (
+                <div key={item.label} className="rounded-2xl border border-white bg-white p-5 shadow-sm">
+                  <p className="text-xs font-bold uppercase tracking-wide text-orange">
+                    {item.label}
+                  </p>
+                  <p className="mt-2 font-heading text-2xl font-bold text-dark">
+                    {item.value}
+                  </p>
+                  <p className="mt-1 text-sm text-gray-text">{item.detail}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Regional Section */}
-          <div id="region" className="mt-16 text-center scroll-mt-40">
+          {/* Communities Section */}
+          <div id="comunidades" className="mt-16 scroll-mt-40">
             <SectionTitle
-              title="Lo Mejor de la Región"
-              subtitle="Combinaciones especiales con otros destinos amazónicos"
+              title="Comunidades de la Ruta"
+              subtitle="El recorrido articula espacios productivos, culturales y de hospedaje comunitario."
             />
-            <p className="text-gray-text text-sm max-w-2xl mx-auto mb-6">
-              Combina tu visita al albergue con otros destinos increíbles de la región. Ofrecemos
-              paquetes que incluyen visitas a reservas cercanas, comunidades vecinas y paisajes
-              únicos de la Amazonía boliviana.
-            </p>
-            <CTAButton href="/contacto" variant="outline">
-              Consultar Disponibilidad
-            </CTAButton>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {[
+                {
+                  name: "Galilea - Artegal",
+                  text: "Punto de ingreso con visita artesanal y vínculos con la producción local.",
+                },
+                {
+                  name: "San Antonio",
+                  text: "Comunidad tsimane con recorridos culturales, danza, tejidos y convivencia tradicional.",
+                },
+                {
+                  name: "Campo Bello",
+                  text: "Espacio de eco-cabañas, pesca artesanal, tejidos, cestería y conexión hacia Puerto Belén.",
+                },
+                {
+                  name: "Monte Rosa",
+                  text: "Tramo fluvial por canoa, cabañas principales de hospedaje, arquería y cantos tradicionales.",
+                },
+              ].map((community) => (
+                <div key={community.name} className="rounded-2xl border border-white bg-white p-5 shadow-sm">
+                  <h3 className="font-heading text-lg font-bold text-dark">{community.name}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-text">{community.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* National Promo */}
-          <div id="nacionales" className="mt-16 scroll-mt-40">
+          {/* Recommendations */}
+          <div id="recomendaciones" className="mt-16 scroll-mt-40">
             <div className="dark-card rounded-2xl p-8 text-center max-w-2xl mx-auto shadow-xl">
               <h3 className="font-heading font-bold text-teal text-xl mb-3">
-                🇧🇴 Tour Especial para Nacionales
+                Recomendaciones para el recorrido
               </h3>
               <p className="text-white/70 text-sm mb-6">
-                Si eres boliviano/a, tenemos precios especiales y paquetes diseñados especialmente
-                para ti. Porque creemos que los bolivianos merecen conocer las maravillas de su propio país.
+                Lleva agua suficiente, protección solar, gorra, ropa para clima variable,
+                calzado antideslizante, botiquín personal y una bolsa para residuos.
               </p>
               <CTAButton href="/contacto" variant="primary">
-                Consultar Precios Nacionales
+                Coordinar salida
               </CTAButton>
             </div>
           </div>

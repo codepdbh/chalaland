@@ -14,20 +14,20 @@ export const contactInfo = {
   whatsappDisplay: "+591 71234567",
 
   /** Primary email */
-  email: "info@ecolodge-amazonia.com",
+  email: "contacto@cecasem.org",
 
   /** Reservations email */
-  reservationsEmail: "reservas@ecolodge-amazonia.com",
+  reservationsEmail: "reservas@cecasem.org",
 
   /** Physical address */
-  address: "Calle Comercio s/n, Rurrenabaque, Beni, Bolivia",
+  address: "San Borja - ruta comunitaria hacia Galilea, San Antonio, Campo Bello y Monte Rosa, Beni, Bolivia",
 
   /** Office hours */
-  hours: "Lunes a Viernes: 8:00 - 18:00 | Sábados: 9:00 - 13:00",
+  hours: "Atención previa coordinación para salidas desde San Borja",
 
   /** Map coordinates */
-  latitude: -14.44,
-  longitude: -67.53,
+  latitude: -14.85,
+  longitude: -66.66,
 
   /** Google Maps embed URL */
   mapEmbedUrl:
@@ -35,12 +35,12 @@ export const contactInfo = {
 
   /** Contact reasons for form dropdown */
   contactReasons: [
-    "Información general",
+    "Información general de la ruta",
     "Consulta sobre paquetes",
     "Solicitar cotización",
     "Reservas y disponibilidad",
-    "Grupos y eventos",
-    "Prensa y colaboraciones",
+    "Coordinación de traslado",
+    "Visita comunitaria o educativa",
     "Otro",
   ],
 };
