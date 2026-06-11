@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { Globe, Mail, MessageCircle, Phone } from "lucide-react";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 import { siteConfig } from "@/data/site";
+import LanguageSelector from "./LanguageSelector";
 
 export default function TopBar() {
   return (
@@ -11,9 +12,9 @@ export default function TopBar() {
     }}>
       {/* Top highlight line */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/20" />
-      <div className="mx-auto max-w-7xl px-4 flex items-center justify-between h-9">
+      <div className="mx-auto flex h-9 max-w-7xl items-center justify-between gap-3 px-4">
         {/* Left: Contact */}
-        <div className="flex items-center gap-4">
+        <div className="flex min-w-0 flex-1 items-center gap-3">
           <Link
             href={`mailto:${siteConfig.email}`}
             className="flex items-center gap-1.5 hover:text-white transition-colors drop-shadow-sm"
@@ -40,35 +41,12 @@ export default function TopBar() {
           </Link>
         </div>
 
-        {/* Right: Social + Language */}
-        <div className="flex items-center gap-4">
+        {/* Right: Availability + Language */}
+        <div className="flex flex-shrink-0 items-center gap-2">
           <span className="hidden text-white/60 md:inline drop-shadow-sm">
             Cupos reducidos por salida
           </span>
-          <Link
-            href={siteConfig.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-            aria-label="Instagram"
-          >
-            <Globe className="w-3.5 h-3.5" />
-          </Link>
-          <div className="flex items-center gap-1 text-[11px]">
-            {siteConfig.languages.map((lang, i) => (
-              <span key={lang.code} className="flex items-center">
-                {i > 0 && <span className="mx-1 text-white/30">/</span>}
-                <Link
-                  href={lang.href}
-                  className={`hover:text-white transition-colors ${
-                    i === 0 ? "text-white font-semibold" : ""
-                  }`}
-                >
-                  {lang.label}
-                </Link>
-              </span>
-            ))}
-          </div>
+          <LanguageSelector />
         </div>
       </div>
       {/* Bottom shadow line for depth */}

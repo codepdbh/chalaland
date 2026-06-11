@@ -34,7 +34,62 @@ export const siteConfig = {
 
   /** Language options */
   languages: [
-    { code: "es", label: "Es", href: "/" },
+    {
+      code: "es",
+      label: "ES",
+      language: "Español",
+      country: "Bolivia",
+      flag: "🇧🇴",
+    },
+    {
+      code: "en",
+      label: "EN",
+      language: "English",
+      country: "Estados Unidos",
+      flag: "🇺🇸",
+    },
+    {
+      code: "pt",
+      label: "PT",
+      language: "Português",
+      country: "Brasil",
+      flag: "🇧🇷",
+    },
+    {
+      code: "fr",
+      label: "FR",
+      language: "Français",
+      country: "Francia",
+      flag: "🇫🇷",
+    },
+    {
+      code: "de",
+      label: "DE",
+      language: "Deutsch",
+      country: "Alemania",
+      flag: "🇩🇪",
+    },
+    {
+      code: "it",
+      label: "IT",
+      language: "Italiano",
+      country: "Italia",
+      flag: "🇮🇹",
+    },
+    {
+      code: "zh-CN",
+      label: "中文",
+      language: "中文",
+      country: "China",
+      flag: "🇨🇳",
+    },
+    {
+      code: "ja",
+      label: "日本語",
+      language: "日本語",
+      country: "Japón",
+      flag: "🇯🇵",
+    },
   ],
 
   /** Google Maps embed URL — replace with your own */
