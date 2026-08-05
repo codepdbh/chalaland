@@ -11,6 +11,9 @@ export default function PackagesSection() {
           title="Paquetes de la ruta"
           subtitle="Elige entre Jochi, Paraba Azul y Amarillo, Peta y Perezoso: experiencias de 2 a 5 días por comunidades, ríos, senderos y eco-cabañas."
         />
+        <p className="-mt-6 mb-10 text-center text-xs md:text-sm font-medium text-gray-text max-w-2xl mx-auto bg-white/70 backdrop-blur-sm rounded-full px-5 py-2.5 border border-gray-200/80 shadow-xs">
+          📌 La ruta tiene dificultad moderada y combina caminos rurales, navegación fluvial, caminatas internas y clima tropical variable.
+        </p>
 
         {/* Package Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">

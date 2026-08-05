@@ -1,6 +1,5 @@
 /* ============================================
    REASONS TO VISIT
-   Edit reasons displayed on the home page
    ============================================ */
 
 export interface Reason {
@@ -9,41 +8,47 @@ export interface Reason {
   description: string;
 }
 
+export const reasonsSectionData = {
+  title: "¿Por qué reservar con nosotros?",
+  subtitle:
+    "Una experiencia vivencial auténtica diseñada y gestionada directamente por las comunidades tsimanes para proteger su cultura y entorno natural.",
+};
+
 export const reasons: Reason[] = [
   {
-    icon: "MapPin",
-    title: "Ruta San Borja - Monte Rosa",
+    icon: "Users",
+    title: "Experiencia Auténtica",
     description:
-      "Recorrido comunitario por Galilea, San Antonio, Campo Bello y Monte Rosa, combinando transporte terrestre, canoa y caminatas locales.",
-  },
-  {
-    icon: "Leaf",
-    title: "Turismo Comunitario Solidario",
-    description:
-      "Una propuesta que integra conservación ambiental, beneficio social y revalorización de recursos naturales y culturales.",
+      "Turismo vivencial genuino compartiendo la vida cotidiana, tradiciones y cultura junto a las comunidades tsimanes.",
   },
   {
     icon: "Languages",
-    title: "Guía Nativo",
+    title: "Guías Nativos",
     description:
-      "Acompañamiento local para interpretar senderos, ríos, historia comunitaria, gastronomía y saberes tradicionales.",
+      "Acompañamiento por intérpretes locales que comparten el conocimiento profundo del territorio, la naturaleza y sus costumbres.",
+  },
+  {
+    icon: "Waves",
+    title: "Transporte Integral",
+    description:
+      "Logística coordinada con transporte terrestre y navegación en canoa por ríos amazónicos durante todo el recorrido.",
+  },
+  {
+    icon: "Home",
+    title: "Eco-cabañas Comunitarias",
+    description:
+      "Descanso y hospedaje acogedor en instalaciones construidas y atendidas por las familias de las comunidades.",
   },
   {
     icon: "Footprints",
-    title: "Recorridos Internos",
+    title: "Gestión Local",
     description:
-      "Caminatas comunitarias de dificultad media, con recorridos aproximados de 3 horas de ida y 3 horas de vuelta.",
+      "Actividades tradicionales, talleres y senderos diseñados y administrados por los propios habitantes de la zona.",
   },
   {
-    icon: "Award",
-    title: "Comunidades Tsimanes",
+    icon: "Leaf",
+    title: "Turismo Responsable",
     description:
-      "Convivencia con San Antonio, Campo Bello y Monte Rosa, donde se encuentran espacios de hospedaje y cultura local.",
-  },
-  {
-    icon: "Clock",
-    title: "Experiencias por Duración",
-    description:
-      "Paquetes de 2 a 5 días para elegir entre visita a una comunidad, recorrido ampliado, experiencia integral o ruta extendida.",
+      "Impacto positivo directo que contribuye al desarrollo socioeconómico local y a la conservación del patrimonio cultural.",
   },
 ];

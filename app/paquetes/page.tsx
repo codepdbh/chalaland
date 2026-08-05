@@ -4,6 +4,8 @@ import SectionTitle from "@/components/SectionTitle";
 import PackageCard from "@/components/PackageCard";
 import CTAButton from "@/components/CTAButton";
 import PageHero from "@/components/PageHero";
+import RouteIntroSection from "@/components/RouteIntroSection";
+import ReasonsSection from "@/components/ReasonsSection";
 
 export const metadata: Metadata = {
   title: "Paquetes de la Ruta",
@@ -21,9 +23,24 @@ export default function PaquetesPage() {
         image="/assets/gallery/landscape-2.jpg"
       />
 
+      {/* Preamble: Route Intro Section */}
+      <RouteIntroSection />
+
+      {/* Preamble: Reasons Section */}
+      <ReasonsSection />
+
       {/* Packages Grid */}
       <section className="canopy-section py-14 md:py-20 px-4">
         <div className="mx-auto max-w-7xl">
+          <SectionTitle
+            title="Nuestros Paquetes"
+            subtitle="Elige la experiencia que mejor se adapte a tu viaje: recorridos de 2 a 5 días por comunidades, ríos, senderos y eco-cabañas."
+            align="center"
+          />
+          <p className="-mt-6 mb-10 text-center text-xs md:text-sm font-medium text-gray-text max-w-2xl mx-auto bg-white/70 backdrop-blur-sm rounded-full px-5 py-2.5 border border-gray-200/80 shadow-xs">
+            📌 La ruta tiene dificultad moderada y combina caminos rurales, navegación fluvial, caminatas internas y clima tropical variable.
+          </p>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {packages.map((pkg) => (
               <PackageCard
