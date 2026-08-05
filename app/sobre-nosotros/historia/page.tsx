@@ -32,7 +32,7 @@ const timeline = [
     year: "4",
     title: "Experiencias por paquetes",
     description:
-      "La ruta se organiza en paquetes de 2 a 5 días: Perezoso, Jochi, Paraba Azul y Peta, cada uno con diferente nivel de profundidad.",
+      "La ruta se organiza en paquetes de 2 a 5 días: Perezoso, Jochi, Paraba Azul y Amarillo y Peta, cada uno con diferente nivel de profundidad.",
   },
   {
     year: "5",

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Globe, ExternalLink, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Globe, ExternalLink, MessageCircle, Compass } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { getAssetPath } from "@/lib/utils";
 
@@ -16,7 +16,8 @@ export default function Footer() {
       >
         <div className="relative mx-auto flex max-w-7xl flex-col gap-5 px-4 py-12 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="eyebrow border-white/20 bg-white/12 text-white">
+            <p className="eyebrow">
+              <Compass className="h-3.5 w-3.5 text-brand-green-hover shrink-0" />
               Ruta comunitaria
             </p>
             <h2

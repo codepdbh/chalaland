@@ -252,8 +252,8 @@ export default function AgendaPage() {
       <section id="meses" className="bg-smoke px-4 py-14 md:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="mb-10 max-w-3xl">
-            <span className="eyebrow">
-              <CalendarDays className="h-3.5 w-3.5" />
+            <span className="eyebrow eyebrow-light">
+              <CalendarDays className="h-3.5 w-3.5 text-canopy shrink-0" />
               Mes a mes
             </span>
             <h2 className="mt-5 text-3xl font-bold text-dark md:text-4xl">

@@ -18,7 +18,7 @@ export default function ContactoPage() {
       <PageHero
         title="Contacto"
         eyebrow="Planifica tu ruta"
-        subtitle="Cuéntanos fechas, intereses y número de viajeros. Te ayudamos a elegir entre Jochi, Paraba Azul, Peta o Perezoso."
+        subtitle="Cuéntanos fechas, intereses y número de viajeros. Te ayudamos a elegir entre Jochi, Paraba Azul y Amarillo, Peta o Perezoso."
         image="/assets/gallery/lodge-4.jpg"
       />
 

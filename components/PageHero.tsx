@@ -52,12 +52,12 @@ export default function PageHero({
           {eyebrow && (
             <span
               className={cn(
-                "eyebrow border-white/25 bg-white/10 text-white",
+                "eyebrow",
                 align === "center" && "mx-auto"
               )}
             >
-              <Compass className="h-3.5 w-3.5" />
-              {eyebrow}
+              <Compass className="h-3.5 w-3.5 text-brand-green-hover shrink-0" />
+              <span className="text-white drop-shadow-sm">{eyebrow}</span>
             </span>
           )}
           <h1 className="mt-5 max-w-full break-words text-2xl font-bold uppercase text-white sm:text-4xl md:text-5xl lg:text-6xl">

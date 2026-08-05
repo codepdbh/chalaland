@@ -155,15 +155,15 @@ export const packages: Package[] = [
   },
   {
     slug: "paraba-azul",
-    title: "Paquete Paraba Azul",
-    animalName: "Paraba Azul",
+    title: "Paquete Paraba Azul y Amarillo",
+    animalName: "Paraba Azul y Amarillo",
     duration: "4 días",
     nights: "3 noches",
     image: "/assets/packages/paraba-azul.jpg",
     shortDescription:
       "Vuela sobre la Amazonía en una ruta ampliada por Galilea, San Antonio, Campo Bello y Monte Rosa.",
     longDescription:
-      "El Paquete Paraba Azul extiende la ruta comunitaria a 4 días y 3 noches. Incluye la visita a Galilea, convivencia en San Antonio, recorrido por Campo Bello, navegación hacia Monte Rosa, caminatas, gastronomía, danza tradicional, fogata, pesca y descanso en cabañas comunitarias.",
+      "El Paquete Paraba Azul y Amarillo extiende la ruta comunitaria a 4 días y 3 noches. Incluye la visita a Galilea, convivencia en San Antonio, recorrido por Campo Bello, navegación hacia Monte Rosa, caminatas, gastronomía, danza tradicional, fogata, pesca y descanso en cabañas comunitarias.",
     regularPrice: routePrice,
     itinerary: [
       {
@@ -232,7 +232,7 @@ export const packages: Package[] = [
     recommendations: commonRecommendations,
     whatToBring: commonWhatToBring,
     policies: commonPolicies,
-    ctaLabel: "Reservar Paquete Paraba Azul",
+    ctaLabel: "Reservar Paquete Paraba Azul y Amarillo",
   },
   {
     slug: "peta",
@@ -390,7 +390,7 @@ export const packages: Package[] = [
 /** Package options for reservation form */
 export const packageOptions = [
   { value: "jochi", label: "Jochi — 3 días / 2 noches" },
-  { value: "paraba-azul", label: "Paraba Azul — 4 días / 3 noches" },
+  { value: "paraba-azul", label: "Paraba Azul y Amarillo — 4 días / 3 noches" },
   { value: "peta", label: "Peta — 5 días / 4 noches" },
   { value: "perezoso", label: "Perezoso — 2 días / 1 noche" },
   { value: "medida", label: "Ruta o comunidad a coordinar" },

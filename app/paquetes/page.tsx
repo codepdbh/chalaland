@@ -8,7 +8,7 @@ import PageHero from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Paquetes de la Ruta",
   description:
-    "Paquetes Jochi, Paraba Azul, Peta y Perezoso para la ruta turística comunitaria San Borja - Monte Rosa.",
+    "Paquetes Jochi, Paraba Azul y Amarillo, Peta y Perezoso para la ruta turística comunitaria San Borja - Monte Rosa.",
 };
 
 export default function PaquetesPage() {

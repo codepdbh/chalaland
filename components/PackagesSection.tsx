@@ -9,7 +9,7 @@ export default function PackagesSection() {
       <div className="mx-auto max-w-7xl">
         <SectionTitle
           title="Paquetes de la ruta"
-          subtitle="Elige entre Jochi, Paraba Azul, Peta y Perezoso: experiencias de 2 a 5 días por comunidades, ríos, senderos y eco-cabañas."
+          subtitle="Elige entre Jochi, Paraba Azul y Amarillo, Peta y Perezoso: experiencias de 2 a 5 días por comunidades, ríos, senderos y eco-cabañas."
         />
 
         {/* Package Grid */}

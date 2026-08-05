@@ -95,9 +95,9 @@ export default function Hero({
           <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-end gap-8 px-4 pt-36 pb-16 sm:pt-32 sm:pb-24 md:grid-cols-[minmax(0,1fr)_360px] lg:pt-36">
             <div className="min-w-0 max-w-3xl">
               {kicker && (
-                <span className="eyebrow max-w-full flex-wrap rounded-2xl border-white/25 bg-white/10 text-white sm:rounded-full">
-                  <Compass className="h-3.5 w-3.5" />
-                  <span className="min-w-0 break-words leading-snug">
+                <span className="eyebrow max-w-full flex-wrap sm:rounded-full">
+                  <Compass className="h-3.5 w-3.5 text-brand-green-hover shrink-0" />
+                  <span className="min-w-0 break-words leading-snug text-white drop-shadow-sm">
                     {kicker}
                   </span>
                 </span>

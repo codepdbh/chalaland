@@ -29,7 +29,7 @@ export const mainNavigation: NavItem[] = [
     href: "/paquetes",
     children: [
       { label: "Paquete Jochi", href: "/paquetes/jochi" },
-      { label: "Paquete Paraba Azul", href: "/paquetes/paraba-azul" },
+      { label: "Paquete Paraba Azul y Amarillo", href: "/paquetes/paraba-azul" },
       { label: "Paquete Peta", href: "/paquetes/peta" },
       { label: "Paquete Perezoso", href: "/paquetes/perezoso" },
       { label: "Ruta por comunidades", href: "/paquetes#ruta" },
